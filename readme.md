@@ -3,7 +3,10 @@ Docker with boot2docker for Windows Tutorial
 
 First follow Docker Installation for boot2docker
 <https://docs.docker.com/installation/windows/>
-![Installer](http://screencast.com/t/sDxfSe55)
+
+![Installer](http://content.screencast.com/users/BurrSutter/folders/Jing/media/79b0f64f-8e5e-4a75-8136-7f79cca1561e/2014-12-03_1347.png)
+
+http://screencast.com/t/sDxfSe55
 Note: I already had VirtualBox on my Windows 7 machine
 
 Mac: The docker and boot2docker binaries are in /usr/local/bin which you can access from your terminal. 
