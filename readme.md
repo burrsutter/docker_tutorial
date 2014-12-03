@@ -1,22 +1,23 @@
 Docker with boot2docker for Windows Tutorial
 ============================================
 
-Docker Installation
+First follow Docker Installation for boot2docker
 <https://docs.docker.com/installation/windows/>
-(http://screencast.com/t/sDxfSe55)
+![Alt text](http://screencast.com/t/sDxfSe55, "Installer")
+Note: I already had VirtualBox on my Windows 7 machine
 
 Mac: The docker and boot2docker binaries are in /usr/local/bin which you can access from your terminal. 
 Windows: C:\Program Files\Boot2Docker for Windows
 
-Q: where does the boot2docker VM (ISO) land on a Mac & Windows?
+Tip 1: where does the boot2docker VM (ISO) land on a Windows?
 Windows: C:\Users\Burr\.boot2docker\boot2docker.iso
 Mac: ~/.boot2docker/boot2docker.iso
 
-Q: where does the boot2docker instance land on Windows installation of VirtualBox
+Tip 2: where does the boot2docker instance land on Windows installation of VirtualBox
 D:\Users\Burr\.VirtualBox\Machines\boot2docker-vm\Snapshots
 Note: I have virtual box using a different drive on my machine
 
-Tip: Window Size Width 160 
+Tip 3: Window Size Width 160 
 (http://screencast.com/t/Hjg7e0tSZs)
 docker ps is best displayed with lots of width
 
