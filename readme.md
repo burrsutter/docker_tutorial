@@ -20,7 +20,7 @@ D:\Users\Burr\.VirtualBox\Machines\boot2docker-vm\Snapshots
 Note: I have virtual box using a different drive on my machine
 
 Tip 3: Window Size Width 160 
-![Alt text](/screenshots/cmd_properties_.png?raw=true "cmd.exe Properties")
+![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
 docker ps is best displayed with lots of width
 
 1) boot2docker version
