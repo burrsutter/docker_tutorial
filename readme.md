@@ -19,30 +19,32 @@ Tip 2: where does the boot2docker instance land on Windows installation of Virtu
 D:\Users\Burr\.VirtualBox\Machines\boot2docker-vm\Snapshots
 Note: I have virtual box using a different drive on my machine
 
-Tip 3: Window Size Width 160 
+Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
 
 ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
-docker ps is best displayed with lots of width
+
 
 1) boot2docker version
 (optional) boot2docker upgrade (if on older version)
-![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") - 
+![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") 
 
 note: VirtualBox installed prior to boot2docker has no mention of boot2docker
 
 2) boot2docker init
-http://screencast.com/t/3Z38m5jKqrl
-![Alt text](/screenshots/boot2docker_init_.png?raw=true "boot2docker init")
+![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
 
 ![Alt text](/screenshots/virtualbox_after_boot2docker.png?raw=true "VirtualBox After")
 
 
 3) boot2docker up
 
-watch for the follwing on Mac
+watch for the following on Mac
 To connect the Docker client to the Docker daemon, please set:
+
 export DOCKER_TLS_VERIFY=1
+
 export DOCKER_HOST=tcp://192.168.59.103:2376
+
 export DOCKER_CERT_PATH=/Users/burr/.boot2docker/certs/boot2docker-vm
 
 http://screencast.com/t/90gD6mN5
