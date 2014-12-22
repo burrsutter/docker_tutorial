@@ -25,7 +25,7 @@ docker ps is best displayed with lots of width
 
 1) boot2docker version
 (optional) boot2docker upgrade (if on older version)
-(http://screencast.com/t/Rhs3YsMvkF) - note: VirtualBox (installed prior to boot2docker has no mention of boot2docker)
+![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") - note: VirtualBox installed prior to boot2docker has no mention of boot2docker
 
 2) boot2docker init
 http://screencast.com/t/3Z38m5jKqrl
