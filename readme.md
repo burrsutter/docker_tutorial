@@ -58,9 +58,13 @@ copy & paste those to execute, if you fail you might see the following
 on _Windows_ it says:
 Waiting for VM and Docker daemon to start...
 .....................ooooooooooooooooooooooooooo
+
 Started.
+
 Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\ca.pem
+
 Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\cert.pem
+
 Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\key.pem
 
 Docker client does not run on Windows for now. Please use
