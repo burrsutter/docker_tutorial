@@ -49,7 +49,6 @@ export DOCKER_HOST=tcp://192.168.59.103:2376
 
 export DOCKER_CERT_PATH=/Users/burr/.boot2docker/certs/boot2docker-vm
 
-http://screencast.com/t/90gD6mN5
 ![Alt text](/screenshots/macosx_env_vars.png?raw=true "Mac OSX Env Vars")
 
 copy & paste those to execute, if you fail you might see the following
@@ -64,13 +63,16 @@ Started.
 Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\ca.pem
 Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\cert.pem
 Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\key.pem
+
 Docker client does not run on Windows for now. Please use
     "boot2docker" ssh
-to SSH into the VM instead.
-http://screencast.com/t/iUOXw8YL4M6J
-http://screencast.com/t/13PZwb3E
 
-4) boot2docker status
+![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
+
+![Alt text](/screenshots/after_boot2docker_up_virtual_box.png?raw=true "boot2docker up results in VirtualBox")
+
+
+4) **boot2docker status**
 
 (and when it is time to shutdown) boot2docker down
 
