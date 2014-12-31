@@ -83,11 +83,12 @@ Note: when it is time to shutdown "boot2docker down"
 6) **boot2docker ssh**
 ![Alt text](/screenshots/boot2docker_ssh.png?raw=true "boot2docker ssh")
 
-7) docker version
-8) docker info
-http://screencast.com/t/9es6HQHe
+7) **docker version**
 
-9) docker (lists commands)
+8) **docker info**
+![Alt text](/screenshots/docker_info.png?raw=true "docker info")
+
+9) **docker** (lists commands)
 http://screencast.com/t/yuu79Kn7OiF
  
 10) docker images (any errors may be result of missing export - http://screencast.com/t/xnxbLxl50gsD
