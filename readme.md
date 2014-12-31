@@ -24,8 +24,10 @@ Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
 ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
 
 
-1) boot2docker version
-(optional) boot2docker upgrade (if on older version)
+1) **boot2docker version**
+
+boot2docker upgrade (optional)
+
 ![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") 
 
 note: VirtualBox installed prior to boot2docker has no mention of boot2docker
@@ -67,7 +69,8 @@ http://screencast.com/t/iUOXw8YL4M6J
 http://screencast.com/t/13PZwb3E
 
 4) boot2docker status
-(time to shutdown) boot2docker down
+
+(and when it is time to shutdown) boot2docker down
 
 
 5) boot2docker ip (good to know for later)
