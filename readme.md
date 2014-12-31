@@ -91,13 +91,11 @@ Note: when it is time to shutdown "boot2docker down"
 9) **docker**
 ![Alt text](/screenshots/docker_lists_commands.png?raw=true "docker info")
  
-10) docker images (any errors may be result of missing export
+10) **docker images**
 
-http://screencast.com/t/xnxbLxl50gsD
+11) **docker ps -a** 
 
-11) docker ps -a 
-
-http://screencast.com/t/WHQUC5E5aV0B
+![Alt text](/screenshots/docker_ps_a.png?raw=true "docker ps -a")
 
 12) docker run centos /bin/echo "Hello World"
 http://screencast.com/t/uk9eFegGgr
