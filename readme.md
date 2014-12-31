@@ -40,7 +40,7 @@ note: VirtualBox installed prior to boot2docker has no mention of boot2docker
 
 3) **boot2docker up**
 
-watch for the following on Mac OSX
+watch for the following on -Mac OSX-
 To connect the Docker client to the Docker daemon, please set:
 
 export DOCKER_TLS_VERIFY=1
@@ -53,10 +53,9 @@ export DOCKER_CERT_PATH=/Users/burr/.boot2docker/certs/boot2docker-vm
 
 copy & paste those to execute, if you fail you might see the following
 
-http://screencast.com/t/xnxbLxl50gsD
+![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
 
-
-on Windows it says:
+on -Windows- it says:
 Waiting for VM and Docker daemon to start...
 .....................ooooooooooooooooooooooooooo
 Started.
