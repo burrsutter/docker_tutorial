@@ -80,8 +80,8 @@ Note: when it is time to shutdown "boot2docker down"
 5) **boot2docker ip** (you will need to know later)
 ![Alt text](/screenshots/boot2docker_ip.png?raw=true "boot2docker ip")
 
-6) boot2docker ssh
-http://screencast.com/t/jkQqe9CYU
+6) **boot2docker ssh**
+![Alt text](/screenshots/boot2docker_ssh.png?raw=true "boot2docker ssh")
 
 7) docker version
 8) docker info
