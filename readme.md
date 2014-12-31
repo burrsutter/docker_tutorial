@@ -98,7 +98,9 @@ Note: when it is time to shutdown "boot2docker down"
 ![Alt text](/screenshots/docker_ps_a.png?raw=true "docker ps -a")
 
 12) docker run centos /bin/echo "Hello World"
-http://screencast.com/t/uk9eFegGgr
+
+![Alt text](/screenshots/docker_run_centos.png?raw=true "docker run centos")
+
 This will take some time if this is the first run of the "centos" image
 If you run the same command again, you will notice that is runs immediately, no download required.
 A Docker container starts incredibly fast when compared to traditional virtual machine technology
