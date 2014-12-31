@@ -97,7 +97,7 @@ Note: when it is time to shutdown "boot2docker down"
 
 ![Alt text](/screenshots/docker_ps_a.png?raw=true "docker ps -a")
 
-12) docker run centos /bin/echo "Hello World"
+12) **docker run centos /bin/echo "Hello World"**
 
 ![Alt text](/screenshots/docker_run_centos.png?raw=true "docker run centos")
 
