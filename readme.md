@@ -56,19 +56,16 @@ copy & paste those to execute, if you fail you might see the following
 ![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
 
 on _Windows_ it says:
-Waiting for VM and Docker daemon to start...
-.....................ooooooooooooooooooooooooooo
-
-Started.
-
-Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\ca.pem
-
-Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\cert.pem
-
-Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\key.pem
-
-Docker client does not run on Windows for now. Please use
-    "boot2docker" ssh
+> Waiting for VM and Docker daemon to start...
+> .....................ooooooooooooooooooooooooooo
+> Started.
+> Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\ca.pem
+> Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\cert.pem
+> Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\key.pem
+>
+> Docker client does not run on Windows for now. Please use
+>    "boot2docker" ssh
+> to SSH into the VM instead.
 
 ![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
 
