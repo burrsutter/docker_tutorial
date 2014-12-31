@@ -69,16 +69,16 @@ on _Windows_ it says:
 
 ![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
 
+And if you check on VirtualBox you will see the boot2docker-vm Running
 ![Alt text](/screenshots/after_boot2docker_up_virtual_box.png?raw=true "boot2docker up results in VirtualBox")
 
 
 4) **boot2docker status**
 
-(and when it is time to shutdown) boot2docker down
+Note: when it is time to shutdown "boot2docker down"
 
-
-5) boot2docker ip (good to know for later)
-http://screencast.com/t/KIOC7nsj
+5) **boot2docker ip** (you will need to know later)
+![Alt text](/screenshots/boot2docker_ip.png?raw=true "boot2docker ip")
 
 6) boot2docker ssh
 http://screencast.com/t/jkQqe9CYU
