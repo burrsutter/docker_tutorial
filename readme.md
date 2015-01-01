@@ -124,7 +124,7 @@ and then use a "ls -l" to see it via the boot2docker-vm
 
 My directory already has some sample projects inside of it
 
-![Alt text](/screenshots/windows_explorer_.png?raw=true "Windows Explorer")
+![Alt text](/screenshots/windows_explorer.png?raw=true "Windows Explorer")
 
 14) **docker run -i -t centos /bin/bash**
 
