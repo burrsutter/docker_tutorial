@@ -172,7 +172,7 @@ next.
 
 19) **docker run -it centos/wildfly**
 
-http://screencast.com/t/rLq8QmHN
+![Alt text](/screenshots/docker_run_centos_wildfly.png?raw=true "docker run -it centos/wildfly")
 
 The "t" is important so you can "Ctrl-C" to stop wildfly and the container
 Hit "Ctrl-C" and run a "docker ps" to see that the container has been stopped
