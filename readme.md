@@ -267,27 +267,37 @@ you should see the deployment of html5java.war in the wildfly console logging
 23) OPTIONAL - Clean Slate: If you wish to completely clean up and run through the above steps again:
 
 23a) Remove/Delete all containers
+
 **docker rm `docker ps -a -q`**
+
 Note: the back ticks
 
 You might also need to "stop" or "kill" any containers that are running but will not remove.
+
 **docker ps**
+
 **docker stop CONTAINER_ID**
+
 **docker kill CONTAINER_ID**
 
 Replace CONTAINER_ID with the id seen in the "docker ps" results.
 
 23b) Remove/Delete all images
+
 ** docker rmi `docker images -a -q` **
+
 Note: watch those back ticks again
 
 23c) Exit the boot2docker-vm shell, back at the Windows Command Prompt
+
 **boot2docker down**
+
 **boot2docker destroy**
 
 and to re-make the boot2docker-vm
 
 **boot2docker init**
+
 **boot2docker up**
 
 Note: On Windows, /Users/burr/.boot2docker and C:\Users\burr\.boot2docker
