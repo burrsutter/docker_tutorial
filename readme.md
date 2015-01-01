@@ -157,18 +157,23 @@ but there have been previously run containers
 shows local images 
 ![Alt text](/screenshots/docker_images.png?raw=true "docker images")
 
-18) docker pull centos/wildfly
+18) **docker pull centos/wildfly**
+
 Docker Hub contains a large number of pre-configured images that are ready to use via a simple "pull"
 https://registry.hub.docker.com/u/centos/wildfly/
+
 Note: "run" does an implicit "pull" if the image is not already downloaded
+
 Docker images are typically identified by two words "owner"/"imagename"
 The centos/wildfly image includes nice documentation on how to use it - we will be following several of those steps
 next.
-http://screencast.com/t/NNLWkrvRd0
 
-19) docker run -it centos/wildfly
+![Alt text](/screenshots/docker_pull_centos_wildfly.png?raw=true "docker pull centos/wildfly")
+
+19) **docker run -it centos/wildfly**
+
 http://screencast.com/t/rLq8QmHN
-Note: "i" and "t" can be combined 
+
 The "t" is important so you can "Ctrl-C" to stop wildfly and the container
 Hit "Ctrl-C" and run a "docker ps" to see that the container has been stopped
 In this case, the wildfly instance does not expose its port to the outside world, let's try that
