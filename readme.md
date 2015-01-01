@@ -236,6 +236,7 @@ and
 22c) Edit the newly created Dockerfile and add the following two lines:
 
 > FROM centos/wildfly
+
 > ADD html5java.war /opt/wildfly/standalone/deployments/
 
 Note: the trailing "/" does matter
