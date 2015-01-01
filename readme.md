@@ -1,6 +1,8 @@
 Docker with boot2docker for Windows Tutorial
 ============================================
 
+This tutorial walks you through the basics of using a Java app server (wildfly) via a Linux container, running on Windows with boot2docker.  There are also notes for people running on Macs as well.  
+
 First follow Docker Installation for boot2docker
 <https://docs.docker.com/installation/windows/>
 
@@ -9,20 +11,26 @@ First follow Docker Installation for boot2docker
 Note: I already had VirtualBox on my Windows 7 machine
 
 Mac: The docker and boot2docker binaries are in /usr/local/bin which you can access from your terminal. 
+
 Windows: C:\Program Files\Boot2Docker for Windows
 
 Tip 1: where does the boot2docker VM (ISO) land on a Windows?
+
 Windows: C:\Users\Burr\.boot2docker\boot2docker.iso
+
 Mac: ~/.boot2docker/boot2docker.iso
 
 Tip 2: where does the boot2docker instance land on Windows installation of VirtualBox
+
 D:\Users\Burr\.VirtualBox\Machines\boot2docker-vm\Snapshots
+
 Note: I have virtual box using a different drive on my machine
 
 Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
 
 ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
 
+**commands are in bold** - type them in and hit Enter
 
 1) **boot2docker version**
 
@@ -175,10 +183,13 @@ next.
 ![Alt text](/screenshots/docker_run_centos_wildfly.png?raw=true "docker run -it centos/wildfly")
 
 The "t" is important so you can "Ctrl-C" to stop wildfly and the container
-Hit "Ctrl-C" and run a "docker ps" to see that the container has been stopped
-In this case, the wildfly instance does not expose its port to the outside world, let's try that
 
-20) docker run -it -p 8080:8080 centos/wildfly
+Hit "Ctrl-C" and run a "docker ps" to see that the container has been stopped
+
+In this particular case, the wildfly instance does not expose its port to the outside world, let's try that next
+
+20) **docker run -it -p 8080:8080 centos/wildfly**
+
 Now, if you remember the IP address (from boot2docker ip) you can use your favorite browser to hit the server
 http://screencast.com/t/rr1ibrZaY1
 http://screencast.com/t/5AkNYFBjtq
@@ -187,19 +198,30 @@ http://screencast.com/t/5eslesheapd
 
 Ctrl-C to terminate Wildfly and its container
 
-21) docker history centos/wildfly
+21) **docker history centos/wildfly**
 The history command allows you to see more detail into how the image was crafted
 http://screencast.com/t/iZroijbqr3R
 
-22) Now, let's modify this image by providing our own custom Java application, there will be several sub-steps
-22a) If you remember way back to "ls /c/Users/Burr/demo", the "Users" directory on your Windows host
-is shared with the boot2docker-vm (thanks to Virtual Box Guest Additions), create a directory called
-"docker_projects" and then a sub-directory called "myapp"
-http://screencast.com/t/dDcJeAP6N2gQ
-and 
-cd /c/Users/Burr/docker_projects/myapp
+22) Now, let's modify this image by providing our own custom Java application, there will be several sub-steps:
 
-Note: "Burr" is the user name that this Windows session is logged in as, yours will be different.
+22a) If you remember way back to "ls /c/Users/Burr/demo", the "Users" directory on your Windows host
+is shared with the boot2docker-vm (thanks to VirtualBox Guest Additions), create a directory called
+"docker_projects" that is a sibling of "demo".
+
+**mkdir /c/Users/Burr/docker_projects**
+
+Note: Use your home directory name in place of "Burr"
+
+and then a sub-directory called "myapp"
+
+**mkdir /c/Users/Burr/docker_projects/myapp**
+
+![Alt text](/screenshots/windows_explorer_myapp.png?raw=true "Windows Explorer myapp")
+
+and 
+
+**cd /c/Users/Burr/docker_projects/myapp**
+
 
 22b)  In the "myapp" directory, create a text file called "Dockerfile", with no extension.  
 http://screencast.com/t/m8RYW8yExw
@@ -207,20 +229,23 @@ http://screencast.com/t/m8RYW8yExw
 22c) Edit the newly created Dockerfile, on Windows I tend to use Notepad++ 
 add the following lines
 
-FROM centos/wildfly
-ADD html5java.war /opt/wildfly/standalone/deployments/
+> FROM centos/wildfly
+> ADD html5java.war /opt/wildfly/standalone/deployments/
 
 Note: the trailing "/" does matter
 
 and you might be wondering where is "html5java.war", it is provided, just copy the .war into "myapp" directory
 
 22d) Back in the boot2docker ssh session
-docker build --tag=myapp .
+** docker build --tag=myapp .**
+
 http://screencast.com/t/OJyH5sI0
 
 22e) Let's see if that worked
-docker run -it -p 8080:8080 myapp
+** docker run -it -p 8080:8080 myapp **
+
 you should see the deployment in the wildfly console logging
+
 http://screencast.com/t/UGoo88Or
 
 And test the app via your browser
