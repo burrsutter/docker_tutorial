@@ -203,7 +203,8 @@ and if you have forgotten your IP address, just open another Command Prompt and 
 
 21) **docker history centos/wildfly**
 The history command allows you to see more detail into how the image was crafted
-http://screencast.com/t/iZroijbqr3R
+![Alt text](/screenshots/docker_history_centos_wildfly.png?raw=true "docker history centos/wildfly")
+
 
 22) Now, let's modify this image by providing our own custom Java application, there will be several sub-steps:
 
