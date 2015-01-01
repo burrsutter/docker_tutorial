@@ -106,8 +106,8 @@ If you run the same command again, you will notice that is runs immediately, no 
 A Docker container starts incredibly fast when compared to traditional virtual machine technology
 
 13) On Windows, with boot2docker 1.3.x, the Users directory is shared as /c/Users
-ls /c/Users
-http://screencast.com/t/s1NXhix6eqHD
+**ls /c/Users**
+![Alt text](/screenshots/docker_ls_users.png?raw=true "ls /c/Users")
 
 This shared folder will allow you to add and edit files using your traditional Windows tools
 instead of having to learn vi or nano.
