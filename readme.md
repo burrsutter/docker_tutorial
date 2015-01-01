@@ -155,7 +155,7 @@ but there have been previously run containers
 17) **docker images**
 
 shows local images 
-http://screencast.com/t/R0uA6jwR0Fl0
+![Alt text](/screenshots/docker_images.png?raw=true "docker images")
 
 18) docker pull centos/wildfly
 Docker Hub contains a large number of pre-configured images that are ready to use via a simple "pull"
