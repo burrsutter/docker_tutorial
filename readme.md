@@ -300,7 +300,7 @@ and to re-make the boot2docker-vm
 
 **boot2docker up**
 
-Note: On Windows, /Users/burr/.boot2docker and C:\Users\burr\.boot2docker
+Note: On Windows, C:\Users\burr\\.boot2docker
 contain files associated with your installation and I have seen .boot2docker not be uninstalled properly, manual deletion may be necessary
 
 
