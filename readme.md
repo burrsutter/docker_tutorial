@@ -268,7 +268,7 @@ you should see the deployment of html5java.war in the wildfly console logging
 
 23a) Remove/Delete all containers
 
-**docker rm `docker ps -a -q`**
+**docker rm ``docker ps -a -q``**
 
 Note: the back ticks
 
