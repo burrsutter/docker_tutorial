@@ -137,10 +137,10 @@ My directory already has some sample projects inside of it
 
 -i interactive 
 
--t allows your keyboard command 
+-t allows your keyboard input 
 
 You can also use "-it" as well as "-i -t".  Remember this trick - if you have an app server failing to start, you
-can see the console output and review the logs.
+can see the console output and review the logs by using "-it"
 
 **cat /etc/system-release**
 
@@ -150,7 +150,7 @@ type "exit" to leave the container and drop back into the boot2docker-vm shell.
 
 15) **docker ps**
 
-there should be no currently running containers since "exit" terminated the container
+there should be no currently running containers since "exit" terminated the centos container
 ![Alt text](/screenshots/docker_ps.png?raw=true "docker ps")
 
 16) **docker ps -a**
@@ -264,5 +264,5 @@ you should see the deployment of html5java.war in the wildfly console logging
 ![Alt text](/screenshots/browser_html5java_myapp.png?raw=true "http://192.168.59.103:8080/html5java")
 
 
-== The End ==
+The End (for now)
 
