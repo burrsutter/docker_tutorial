@@ -139,18 +139,21 @@ can see the console output and review the logs.
 
 ![Alt text](/screenshots/cat_etc_system_release.png?raw=true "cat /etc/system-release")
 
-type "exit" to leave the container
+type "exit" to leave the container and drop back into the boot2docker-vm shell.
 
 15) **docker ps**
 
-there are currently no running containers
-http://screencast.com/t/0wGF9yUbReA
+there should be no currently running containers since "exit" terminated the container
+![Alt text](/screenshots/docker_ps.png?raw=true "docker ps")
 
-16) docker ps -a
-there have been previously run containers
-http://screencast.com/t/dexSD663nSBk
+16) **docker ps -a**
 
-17) docker images
+but there have been previously run containers
+
+![Alt text](/screenshots/docker_ps_a_2.png?raw=true "docker ps -a")
+
+17) **docker images**
+
 shows local images 
 http://screencast.com/t/R0uA6jwR0Fl0
 
