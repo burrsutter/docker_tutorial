@@ -132,13 +132,17 @@ My directory already has some sample projects inside of it
 
 -t allows your keyboard command 
 
+You can also use "-it" as well as "-i -t".  Remember this trick - if you have an app server failing to start, you
+can see the console output and review the logs.
+
 **cat /etc/system-release**
 
-http://screencast.com/t/DYgVMhGk
+![Alt text](/screenshots/cat_etc_system_release.png?raw=true "cat /etc/system-release")
 
 type "exit" to leave the container
 
-15) docker ps
+15) **docker ps**
+
 there are currently no running containers
 http://screencast.com/t/0wGF9yUbReA
 
