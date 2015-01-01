@@ -34,11 +34,10 @@ Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
 
 1) **boot2docker version**
 
-boot2docker upgrade (optional)
-
 ![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") 
 
-note: VirtualBox installed prior to boot2docker has no mention of boot2docker until we use "boot2docker init"
+Note: VirtualBox installed prior to boot2docker has no mention of boot2docker until we use "boot2docker init".
+Also, if you have previously installed boot2docker, you can often use "boot2docker upgrade" to simply update to the latest version.
 
 2) **boot2docker init**
 ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
@@ -190,7 +189,7 @@ In this particular case, the wildfly instance does not expose its port to the ou
 
 20) **docker run -it -p 8080:8080 centos/wildfly**
 
-![Alt text](/screenshots/docker_run_it_p_8080_8080.png.png?raw=true "docker run -it -p 8080:8080 centos/wildfly")
+![Alt text](/screenshots/docker_run_it_p_8080_8080.png?raw=true "docker run -it -p 8080:8080 centos/wildfly")
 
 Now, if you remember the IP address (from boot2docker ip) you can use your favorite browser to hit the server
 
