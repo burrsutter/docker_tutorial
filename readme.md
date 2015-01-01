@@ -244,6 +244,7 @@ Note: the trailing "/" does matter
 and you might be wondering where is "html5java.war", it is available at github (https://github.com/burrsutter/docker_tutorial/blob/master/html5java.war?raw=true), just download and copy the html5java.war into "myapp" directory
 
 22d) Back in the boot2docker ssh session
+
 **docker build --tag=myapp .**
 
 Note: the trailing "." is important
@@ -258,7 +259,10 @@ you should see the deployment of html5java.war in the wildfly console logging
 
 ![Alt text](/screenshots/html5java_war_deployment.png?raw=true "docker run -it -p 8080:8080 myapp")
 
-22f) And test the app via your browser
+22f) And test the app via your browser, http://192.168.59.103:8080/html5java
 
-http://screencast.com/t/iKGGiKr4db
+![Alt text](/screenshots/browser_html5java_myapp.png?raw=true "http://192.168.59.103:8080/html5java")
+
+
+== The End ==
 
