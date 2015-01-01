@@ -202,6 +202,7 @@ and if you have forgotten your IP address, just open another Command Prompt and 
 **Ctrl-C** to terminate Wildfly and its container
 
 21) **docker history centos/wildfly**
+
 The history command allows you to see more detail into how the image was crafted
 ![Alt text](/screenshots/docker_history_centos_wildfly.png?raw=true "docker history centos/wildfly")
 
@@ -227,11 +228,13 @@ and
 **cd /c/Users/Burr/docker_projects/myapp**
 
 
-22b)  In the "myapp" directory, create a text file called "Dockerfile", with no extension.  
-http://screencast.com/t/m8RYW8yExw
+22b)  In the "myapp" directory, create a text file called "Dockerfile", with no extension. On Windows I tend to use Notepad++ 
 
-22c) Edit the newly created Dockerfile, on Windows I tend to use Notepad++ 
-add the following lines
+![Alt text](/screenshots/dockerfile_windows_explorer.png?raw=true "Windows Explorer Dockerfile")
+
+
+
+22c) Edit the newly created Dockerfile and add the following lines:
 
 > FROM centos/wildfly
 > ADD html5java.war /opt/wildfly/standalone/deployments/
