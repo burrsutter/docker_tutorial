@@ -113,8 +113,14 @@ A Docker container starts incredibly fast when compared to traditional virtual m
 This shared folder will allow you to add and edit files using your traditional Windows tools
 instead of having to learn vi or nano.
 
-ls /c/Users/Burr/demo
-http://screencast.com/t/fH7xOTLcoy9
+"Burr" is the name of my home directory (user name), create a "demo" sub-directory to your home directory
+and then use a "ls -l" to see it via the boot2docker-vm
+
+**ls -l /c/Users/Burr/demo**
+
+![Alt text](/screenshots/ls_l_c_users_Burr_demo.png?raw=true "ls -l /c/Users/Burr/demo")
+
+
 http://screencast.com/t/gec9jWkt9CL
 
 
