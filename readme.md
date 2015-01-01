@@ -196,9 +196,10 @@ Now, if you remember the IP address (from boot2docker ip) you can use your favor
 ![Alt text](/screenshots/browser_wildfly.png?raw=true "http://192.168.59.103:8080")
 
 and if you have forgotten your IP address, just open another Command Prompt and type "boot2docker ip"
-http://screencast.com/t/5eslesheapd
+![Alt text](/screenshots/boot2docker_ip_2nd_command_prompt.png?raw=true "boot2docker ip")
 
-Ctrl-C to terminate Wildfly and its container
+
+**Ctrl-C** to terminate Wildfly and its container
 
 21) **docker history centos/wildfly**
 The history command allows you to see more detail into how the image was crafted
