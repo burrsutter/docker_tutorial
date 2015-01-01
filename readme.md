@@ -83,6 +83,8 @@ Note: when it is time to shutdown "boot2docker down"
 6) **boot2docker ssh**
 ![Alt text](/screenshots/boot2docker_ssh.png?raw=true "boot2docker ssh")
 
+From this point forward, you will be inside of a Linux shell, using Linux commands
+
 7) **docker version**
 
 8) **docker info**
@@ -120,15 +122,18 @@ and then use a "ls -l" to see it via the boot2docker-vm
 
 ![Alt text](/screenshots/ls_l_c_users_Burr_demo.png?raw=true "ls -l /c/Users/Burr/demo")
 
+My directory already has some sample projects inside of it
 
-http://screencast.com/t/gec9jWkt9CL
+![Alt text](/screenshots/windows_explorer_.png?raw=true "Windows Explorer")
 
+14) **docker run -i -t centos /bin/bash**
 
-14) docker run -i -t centos /bin/bash
 -i interactive 
+
 -t allows your keyboard command 
 
-cat /etc/system-release
+**cat /etc/system-release**
+
 http://screencast.com/t/DYgVMhGk
 
 type "exit" to leave the container
