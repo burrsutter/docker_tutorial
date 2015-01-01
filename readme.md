@@ -228,28 +228,30 @@ and
 **cd /c/Users/Burr/docker_projects/myapp**
 
 
-22b)  In the "myapp" directory, create a text file called "Dockerfile", with no extension. On Windows I tend to use Notepad++ 
+22b)  In the "myapp" directory, create a text file called "Dockerfile", with no extension. On Windows I tend to use Notepad++ for text editing.
 
 ![Alt text](/screenshots/dockerfile_windows_explorer.png?raw=true "Windows Explorer Dockerfile")
 
 
-
-22c) Edit the newly created Dockerfile and add the following lines:
+22c) Edit the newly created Dockerfile and add the following two lines:
 
 > FROM centos/wildfly
 > ADD html5java.war /opt/wildfly/standalone/deployments/
 
 Note: the trailing "/" does matter
 
-and you might be wondering where is "html5java.war", it is provided, just copy the .war into "myapp" directory
+and you might be wondering where is "html5java.war", it is available at github (https://github.com/burrsutter/docker_tutorial), just copy the html5java.war into "myapp" directory
 
 22d) Back in the boot2docker ssh session
-** docker build --tag=myapp .**
+**docker build --tag=myapp .**
 
-http://screencast.com/t/OJyH5sI0
+Note: the trailing "." is important
+
+![Alt text](/screenshots/docker_build.png?raw=true "docker build")
+
 
 22e) Let's see if that worked
-** docker run -it -p 8080:8080 myapp **
+**docker run -it -p 8080:8080 myapp**
 
 you should see the deployment in the wildfly console logging
 
