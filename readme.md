@@ -38,7 +38,7 @@ boot2docker upgrade (optional)
 
 ![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") 
 
-note: VirtualBox installed prior to boot2docker has no mention of boot2docker
+note: VirtualBox installed prior to boot2docker has no mention of boot2docker until we use "boot2docker init"
 
 2) **boot2docker init**
 ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
@@ -190,8 +190,10 @@ In this particular case, the wildfly instance does not expose its port to the ou
 
 20) **docker run -it -p 8080:8080 centos/wildfly**
 
+![Alt text](/screenshots/docker_run_it_p_8080_8080.png.png?raw=true "docker run -it -p 8080:8080 centos/wildfly")
+
 Now, if you remember the IP address (from boot2docker ip) you can use your favorite browser to hit the server
-http://screencast.com/t/rr1ibrZaY1
+
 http://screencast.com/t/5AkNYFBjtq
 and if you have forgotten your IP address, just open another Command Prompt and type "boot2docker ip"
 http://screencast.com/t/5eslesheapd
