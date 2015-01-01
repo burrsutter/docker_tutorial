@@ -8,11 +8,11 @@ First follow Docker Installation for boot2docker
 
 ![Alt text](/screenshots/installer.png?raw=true "Installer")
 
-Note: I already had VirtualBox on my Windows 7 machine
+Note: I already had VirtualBox on my Windows 7 machine so I left that box unchecked.
 
 Mac: The docker and boot2docker binaries are in /usr/local/bin which you can access from your terminal. 
 
-Windows: C:\Program Files\Boot2Docker for Windows
+Windows: The boot2docker binary lands in C:\Program Files\Boot2Docker for Windows
 
 Tip 1: where does the boot2docker VM (ISO) land on a Windows?
 
@@ -262,6 +262,36 @@ you should see the deployment of html5java.war in the wildfly console logging
 22f) And test the app via your browser, http://192.168.59.103:8080/html5java
 
 ![Alt text](/screenshots/browser_html5java_myapp.png?raw=true "http://192.168.59.103:8080/html5java")
+
+
+23) OPTIONAL - Clean Slate: If you wish to completely clean up and run through the above steps again:
+
+23a) Remove/Delete all containers
+**docker rm `docker ps -a -q`**
+Note: the back ticks
+
+You might also need to "stop" or "kill" any containers that are running but will not remove.
+**docker ps**
+**docker stop CONTAINER_ID**
+**docker kill CONTAINER_ID**
+
+Replace CONTAINER_ID with the id seen in the "docker ps" results.
+
+23b) Remove/Delete all images
+** docker rmi `docker images -a -q` **
+Note: watch those back ticks again
+
+23c) Exit the boot2docker-vm shell, back at the Windows Command Prompt
+**boot2docker down**
+**boot2docker destroy**
+
+and to re-make the boot2docker-vm
+
+**boot2docker init**
+**boot2docker up**
+
+Note: On Windows, /Users/burr/.boot2docker and C:\Users\burr\.boot2docker
+contain files associated with your installation and I have seen .boot2docker not be uninstalled properly, manual deletion may be necessary
 
 
 The End (for now)
