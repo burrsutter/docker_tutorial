@@ -284,7 +284,7 @@ Replace CONTAINER_ID with the id seen in the "docker ps" results.
 
 23b) Remove/Delete all images
 
-**docker rmi \`docker images -a -q\` **
+**docker rmi \`docker images -a -q\`**
 
 Note: watch those back ticks again
 
