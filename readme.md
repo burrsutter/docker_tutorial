@@ -193,7 +193,8 @@ In this particular case, the wildfly instance does not expose its port to the ou
 
 Now, if you remember the IP address (from boot2docker ip) you can use your favorite browser to hit the server
 
-http://screencast.com/t/5AkNYFBjtq
+![Alt text](/screenshots/browser_wildfly.png?raw=true "http://192.168.59.103:8080")
+
 and if you have forgotten your IP address, just open another Command Prompt and type "boot2docker ip"
 http://screencast.com/t/5eslesheapd
 
