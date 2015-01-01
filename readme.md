@@ -16,7 +16,7 @@ Windows: C:\Program Files\Boot2Docker for Windows
 
 Tip 1: where does the boot2docker VM (ISO) land on a Windows?
 
-Windows: C:\Users\Burr\.boot2docker\boot2docker.iso
+Windows: C:\Users\Burr\\.boot2docker\boot2docker.iso
 
 Mac: ~/.boot2docker/boot2docker.iso
 
