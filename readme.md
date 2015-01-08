@@ -1,14 +1,13 @@
 Docker with boot2docker for Windows Tutorial
 ============================================
 
-This tutorial walks you through the basics of using a Java app server (wildfly) via a Linux container, running on Windows with boot2docker.  There are also notes for people running on Macs as well.  
+This tutorial walks you through the basics of using a Java app server (WildFly) via a Linux container, running on Windows with boot2docker.  There are notes for people running on Macs as well.  
 
-First follow Docker Installation for boot2docker
-<https://docs.docker.com/installation/windows/>
+First follow [installation steps](https://docs.docker.com/installation/windows/) for boot2docker:
 
 ![Alt text](/screenshots/installer.png?raw=true "Installer")
 
-Note: I already had VirtualBox on my Windows 7 machine so I left that box unchecked.
+Unless you already have VirtualBox installed, install all the components.
 
 Mac: The docker and boot2docker binaries are in /usr/local/bin which you can access from your terminal. 
 
