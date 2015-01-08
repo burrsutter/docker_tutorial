@@ -18,13 +18,11 @@ Windows: `C:\Users\Burr\\.boot2docker\boot2docker.iso`
 Mac: `~/.boot2docker/boot2docker.iso`
 * * * 
 
-* * *
 ##### Tip 2: where does the boot2docker instance land on Windows installation of VirtualBox
 
     D:\Users\Burr\.VirtualBox\Machines\boot2docker-vm\Snapshots
 
 > I have virtual box using a different drive on my machine
-* * *
 
 * * *
 ##### Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
@@ -36,8 +34,8 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 1. `boot2docker version`
     ![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") 
-    > VirtualBox installed prior to boot2docker has no mention of boot2docker until we use "boot2docker init".
-    > Also, if you have previously installed boot2docker, you can often use "boot2docker upgrade" to simply update to the latest version.
+    > VirtualBox installed prior to boot2docker has no mention of boot2docker until we use `boot2docker init`.
+    > Also, if you have previously installed boot2docker, you can often use `boot2docker upgrade` to simply update to the latest version.
 
 2. `boot2docker init`
     ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
@@ -57,7 +55,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     ![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
 
-    Now, iff you check the VirtualBox GUI you will see the `boot2docker-vm` running:
+    Now, if you check the VirtualBox GUI you will see the `boot2docker-vm` running:
     
     ![Alt text](/screenshots/after_boot2docker_up_virtual_box.png?raw=true "boot2docker up results in VirtualBox")
 
