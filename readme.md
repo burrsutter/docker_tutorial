@@ -32,7 +32,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
 * * *
 
-Now, let's explore a few of the commands available:
+#### Explore Docker
 
 1. `boot2docker version`
     ![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") 
@@ -45,267 +45,253 @@ Now, let's explore a few of the commands available:
 
 3. `boot2docker up`
 
-    Watch for the following on _Mac OSX_
+    Watch for the following on _Mac OSX_:
     
-    ````
-    To connect the Docker client to the Docker daemon, please set:
-
-    export DOCKER_TLS_VERIFY=1
-
-    export DOCKER_HOST=tcp://192.168.59.103:2376
-
-    export DOCKER_CERT_PATH=/Users/burr/.boot2docker/certs/boot2docker-vm
-    ````
     ![Alt text](/screenshots/macosx_env_vars.png?raw=true "Mac OSX Env Vars")
 
-    copy & paste those to execute, if you fail you might see the following
+    Copy and paste the export statements you are provided with in to your terminal. If you get this step wrong, when you try further commands, you may see an error message like:
 
     ![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
 
-    on _Windows_ it says:
-    ````
-    > Waiting for VM and Docker daemon to start...
-    > .....................ooooooooooooooooooooooooooo
-    > Started.
-    > Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\ca.pem
-    > Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\cert.pem
-    > Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\key.pem
-    >
-    
-    > Docker client does not run on Windows for now. Please use
-    >    "boot2docker" ssh
-    > to SSH into the VM instead.
-    ````
+    Watch for the following on _Windows_:
 
     ![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
 
-    And if you check on VirtualBox you will see the boot2docker-vm Running
+    Now, iff you check the VirtualBox GUI you will see the `boot2docker-vm` running:
+    
     ![Alt text](/screenshots/after_boot2docker_up_virtual_box.png?raw=true "boot2docker up results in VirtualBox")
 
+4. `boot2docker status`
+    > When it is time to shutdown, run `boot2docker down`
 
-4) **boot2docker status**
+5. `boot2docker ip`
+    ![Alt text](/screenshots/boot2docker_ip.png?raw=true "boot2docker ip")
 
-Note: when it is time to shutdown "boot2docker down"
+    > You will need this later!
+6. `boot2docker ssh`
+    ![Alt text](/screenshots/boot2docker_ssh.png?raw=true "boot2docker ssh")
 
-5) **boot2docker ip** (you will need to know later)
-![Alt text](/screenshots/boot2docker_ip.png?raw=true "boot2docker ip")
+    > From this point forward, you will be inside of a Linux shell, using Linux commands
 
-6) **boot2docker ssh**
-![Alt text](/screenshots/boot2docker_ssh.png?raw=true "boot2docker ssh")
+7. `docker version`
 
-From this point forward, you will be inside of a Linux shell, using Linux commands
+8. `docker info`
+    ![Alt text](/screenshots/docker_info.png?raw=true "docker info")
 
-7) **docker version**
-
-8) **docker info**
-![Alt text](/screenshots/docker_info.png?raw=true "docker info")
-
-9) **docker**
-![Alt text](/screenshots/docker_lists_commands.png?raw=true "docker info")
+9. `docker`
+    ![Alt text](/screenshots/docker_lists_commands.png?raw=true "docker info")
  
-10) **docker images**
+10. `docker images`
 
-11) **docker ps -a** 
+11. `docker ps -a`
+    ![Alt text](/screenshots/docker_ps_a.png?raw=true "docker ps -a")
 
-![Alt text](/screenshots/docker_ps_a.png?raw=true "docker ps -a")
+12. `docker run centos /bin/echo "Hello World"`
 
-12) **docker run centos /bin/echo "Hello World"**
+    ![Alt text](/screenshots/docker_run_centos.png?raw=true "docker run centos")
 
-![Alt text](/screenshots/docker_run_centos.png?raw=true "docker run centos")
+    This will take some time if this is the first run of the "centos" image
+    If you run the same command again, you will notice that is runs immediately, no download required.
+    A Docker container starts incredibly fast when compared to traditional virtual machine technology
 
-This will take some time if this is the first run of the "centos" image
-If you run the same command again, you will notice that is runs immediately, no download required.
-A Docker container starts incredibly fast when compared to traditional virtual machine technology
+13. On Windows, with boot2docker 1.3.x, the Users directory is shared as `/c/Users`
 
-13) On Windows, with boot2docker 1.3.x, the Users directory is shared as /c/Users
+    `ls /c/Users`
+    ![Alt text](/screenshots/ls_users.png?raw=true "ls /c/Users")
 
-**ls /c/Users**
-![Alt text](/screenshots/ls_users.png?raw=true "ls /c/Users")
+    This shared folder will allow you to add and edit files using your traditional Windows tools instead of having to learn vi or nano.
 
-This shared folder will allow you to add and edit files using your traditional Windows tools
-instead of having to learn vi or nano.
+    Create a `demo` sub-directory to your home directory and then use a `ls -l` to see it via the boot2docker-vm (in this example `Burr` is the username):
 
-"Burr" is the name of my home directory (user name), create a "demo" sub-directory to your home directory
-and then use a "ls -l" to see it via the boot2docker-vm
+    `ls -l /c/Users/Burr/demo`
 
-**ls -l /c/Users/Burr/demo**
+    ![Alt text](/screenshots/ls_l_c_users_Burr_demo.png?raw=true "ls -l /c/Users/Burr/demo")
 
-![Alt text](/screenshots/ls_l_c_users_Burr_demo.png?raw=true "ls -l /c/Users/Burr/demo")
+    In this example, there are already some sample projects:
 
-My directory already has some sample projects inside of it
+    ![Alt text](/screenshots/windows_explorer.png?raw=true "Windows Explorer")
 
-![Alt text](/screenshots/windows_explorer.png?raw=true "Windows Explorer")
+14. `docker run -i -t centos /bin/bash`
+    ````
+    -i interactive 
+    -t allows your keyboard input 
+    ````
 
-14) **docker run -i -t centos /bin/bash**
+    You can also use `-it` as well as `-i -t`.  Remember this trick - if you have an app server failing to start,  you can see the console output and review the logs by using "-it"
 
--i interactive 
+    `cat /etc/system-release`
 
--t allows your keyboard input 
+    ![Alt text](/screenshots/cat_etc_system_release.png?raw=true "cat /etc/system-release")
 
-You can also use "-it" as well as "-i -t".  Remember this trick - if you have an app server failing to start, you
-can see the console output and review the logs by using "-it"
+    type `exit` to leave the container and drop back into the boot2docker-vm shell.
 
-**cat /etc/system-release**
+15. `docker ps`
 
-![Alt text](/screenshots/cat_etc_system_release.png?raw=true "cat /etc/system-release")
+    There should be no currently running containers since `exit` terminated the centos container
+    ![Alt text](/screenshots/docker_ps.png?raw=true "docker ps")
 
-type "exit" to leave the container and drop back into the boot2docker-vm shell.
+16. `docker ps -a`
 
-15) **docker ps**
+    but there have been previously run containers
 
-there should be no currently running containers since "exit" terminated the centos container
-![Alt text](/screenshots/docker_ps.png?raw=true "docker ps")
+    ![Alt text](/screenshots/docker_ps_a_2.png?raw=true "docker ps -a")
 
-16) **docker ps -a**
+17. `docker images`
 
-but there have been previously run containers
+    shows local images 
+    ![Alt text](/screenshots/docker_images.png?raw=true "docker images")
 
-![Alt text](/screenshots/docker_ps_a_2.png?raw=true "docker ps -a")
+18. `docker pull centos/wildfly`
 
-17) **docker images**
+    Docker Hub contains a large number of pre-configured images that are ready to use via a simple "pull" e.g. <https://registry.hub.docker.com/u/centos/wildfly/>
 
-shows local images 
-![Alt text](/screenshots/docker_images.png?raw=true "docker images")
+    > `run` does an implicit "pull" if the image is not already downloaded
 
-18) **docker pull centos/wildfly**
+    Docker images are typically identified by two words `"owner"/"imagename"`
+    The `centos/wildfly` image includes nice documentation on how to use it - we will be following several of those steps next.
 
-Docker Hub contains a large number of pre-configured images that are ready to use via a simple "pull"
-https://registry.hub.docker.com/u/centos/wildfly/
+    ![Alt text](/screenshots/docker_pull_centos_wildfly.png?raw=true "docker pull centos/wildfly")
 
-Note: "run" does an implicit "pull" if the image is not already downloaded
+19. `docker run -it centos/wildfly`
 
-Docker images are typically identified by two words "owner"/"imagename"
-The centos/wildfly image includes nice documentation on how to use it - we will be following several of those steps
-next.
+    ![Alt text](/screenshots/docker_run_centos_wildfly.png?raw=true "docker run -it centos/wildfly")
 
-![Alt text](/screenshots/docker_pull_centos_wildfly.png?raw=true "docker pull centos/wildfly")
+    The `t` is important so you can `Ctrl-C` to stop wildfly and the container.
 
-19) **docker run -it centos/wildfly**
+    Hit `Ctrl-C` and run a `docker ps` to see that the container has been stopped.
 
-![Alt text](/screenshots/docker_run_centos_wildfly.png?raw=true "docker run -it centos/wildfly")
+    In this particular case, the WildFly instance does not expose any ports to the outside world, let's try that next.
 
-The "t" is important so you can "Ctrl-C" to stop wildfly and the container
+20. `docker run -it -p 8080:8080 centos/wildfly`
 
-Hit "Ctrl-C" and run a "docker ps" to see that the container has been stopped
+    ![Alt text](/screenshots/docker_run_it_p_8080_8080.png?raw=true "docker run -it -p 8080:8080 centos/wildfly")
 
-In this particular case, the wildfly instance does not expose its port to the outside world, let's try that next
+    Now, if you remember the IP address (from `boot2docker ip`) you can use your favorite browser to hit the server
 
-20) **docker run -it -p 8080:8080 centos/wildfly**
+    ![Alt text](/screenshots/browser_wildfly.png?raw=true "http://192.168.59.103:8080")
 
-![Alt text](/screenshots/docker_run_it_p_8080_8080.png?raw=true "docker run -it -p 8080:8080 centos/wildfly")
+    If you have forgotten your IP address, just open another Command Prompt and type "boot2docker ip"
+    ![Alt text](/screenshots/boot2docker_ip_2nd_command_prompt.png?raw=true "boot2docker ip")
 
-Now, if you remember the IP address (from boot2docker ip) you can use your favorite browser to hit the server
+    Press `Ctrl-C` to terminate the WildFly container.
 
-![Alt text](/screenshots/browser_wildfly.png?raw=true "http://192.168.59.103:8080")
+21. `docker history centos/wildfly`
 
-and if you have forgotten your IP address, just open another Command Prompt and type "boot2docker ip"
-![Alt text](/screenshots/boot2docker_ip_2nd_command_prompt.png?raw=true "boot2docker ip")
+    The history command allows you to see more detail into how the image was crafted
+    ![Alt text](/screenshots/docker_history_centos_wildfly.png?raw=true "docker history centos/wildfly")
 
+#### Modify the image and provide our own custom Java application
 
-**Ctrl-C** to terminate Wildfly and its container
+1. If you remember way back to `ls /c/Users/Burr/demo`, the `Users` directory on your Windows host
+is shared with the boot2docker-vm (thanks to VirtualBox Guest Additions). In your home directory, create a directory called `docker_projects` that is a sibling of `demo`.
 
-21) **docker history centos/wildfly**
+    ````
+    mkdir /c/Users/Burr/docker_projects
+    ````
+    > Use your home directory name in place of "Burr"
 
-The history command allows you to see more detail into how the image was crafted
-![Alt text](/screenshots/docker_history_centos_wildfly.png?raw=true "docker history centos/wildfly")
+    and then create a sub-directory called `myapp`
 
+    ````
+    mkdir /c/Users/Burr/docker_projects/myapp
+    ````
 
-22) Now, let's modify this image by providing our own custom Java application, there will be several sub-steps:
+    ![Alt text](/screenshots/windows_explorer_myapp.png?raw=true "Windows Explorer myapp")
 
-22a) If you remember way back to "ls /c/Users/Burr/demo", the "Users" directory on your Windows host
-is shared with the boot2docker-vm (thanks to VirtualBox Guest Additions), create a directory called
-"docker_projects" that is a sibling of "demo".
+    and then change to the directory
 
-**mkdir /c/Users/Burr/docker_projects**
+    ````
+    cd /c/Users/Burr/docker_projects/myapp
+    ````
 
-Note: Use your home directory name in place of "Burr"
+2. In the `myapp` directory, create a text file called `Dockerfile`, with no extension. 
 
-and then a sub-directory called "myapp"
+    > On Windows we recommend using Notepad++ for text editing.
 
-**mkdir /c/Users/Burr/docker_projects/myapp**
+    ![Alt text](/screenshots/dockerfile_windows_explorer.png?raw=true "Windows Explorer Dockerfile")
 
-![Alt text](/screenshots/windows_explorer_myapp.png?raw=true "Windows Explorer myapp")
 
-and 
+3.  Edit the newly created `Dockerfile` and add the following two lines:
 
-**cd /c/Users/Burr/docker_projects/myapp**
+    ````
+    FROM centos/wildfly
 
+    ADD html5java.war /opt/wildfly/standalone/deployments/
+    ````
 
-22b)  In the "myapp" directory, create a text file called "Dockerfile", with no extension. On Windows I tend to use Notepad++ for text editing.
+    > The trailing "/" does matter
 
-![Alt text](/screenshots/dockerfile_windows_explorer.png?raw=true "Windows Explorer Dockerfile")
+    You can find `html5java.war` at <https://github.com/burrsutter/docker_tutorial/blob/master/html5java.war?raw=true>. Download the war and copy it to the `myapp` directory.
 
+4. Back in the boot2docker ssh session
 
-22c) Edit the newly created Dockerfile and add the following two lines:
+    ````
+    docker build --tag=myapp .
+    ````
 
-> FROM centos/wildfly
+    > the trailing "." is important
 
-> ADD html5java.war /opt/wildfly/standalone/deployments/
+    ![Alt text](/screenshots/docker_build.png?raw=true "docker build")
 
-Note: the trailing "/" does matter
+5. Let's see if that worked
 
-and you might be wondering where is "html5java.war", it is available at github (https://github.com/burrsutter/docker_tutorial/blob/master/html5java.war?raw=true), just download and copy the html5java.war into "myapp" directory
+    ````
+    docker run -it -p 8080:8080 myapp
+    ````
 
-22d) Back in the boot2docker ssh session
+    you should see the deployment of `html5java.war` in the wildfly console logging
 
-**docker build --tag=myapp .**
+    ![Alt text](/screenshots/html5java_war_deployment.png?raw=true "docker run -it -p 8080:8080 myapp")
 
-Note: the trailing "." is important
+6. And test the app via your browser <http://192.168.59.103:8080/html5java>
 
-![Alt text](/screenshots/docker_build.png?raw=true "docker build")
+    ![Alt text](/screenshots/browser_html5java_myapp.png?raw=true "http://192.168.59.103:8080/html5java")
 
-22e) Let's see if that worked
+#### Cleanup
 
-**docker run -it -p 8080:8080 myapp**
+OPTIONAL - Clean Slate: If you wish to completely clean up and run through the above steps again:
 
-you should see the deployment of html5java.war in the wildfly console logging
+1. Remove/Delete all containers
 
-![Alt text](/screenshots/html5java_war_deployment.png?raw=true "docker run -it -p 8080:8080 myapp")
+    ````
+    docker rm \`docker ps -a -q\`
+    ````
 
-22f) And test the app via your browser, http://192.168.59.103:8080/html5java
+    >  the back ticks are important!
 
-![Alt text](/screenshots/browser_html5java_myapp.png?raw=true "http://192.168.59.103:8080/html5java")
+    You might also need to "stop" or "kill" any containers that are running and will not remove.
 
+    ````
+    docker ps
+    docker stop CONTAINER_ID
+    docker kill CONTAINER_ID
+    ````
 
-23) OPTIONAL - Clean Slate: If you wish to completely clean up and run through the above steps again:
+    Replace CONTAINER_ID with the id seen in the `docker ps` results.
 
-23a) Remove/Delete all containers
+2. Remove/Delete all images
 
-**docker rm \`docker ps -a -q\`**
+    ````
+    docker rmi \`docker images -a -q\`
+    ````
 
-Note: the back ticks
+    > watch those back ticks again
 
-You might also need to "stop" or "kill" any containers that are running and will not remove.
+3. Exit the boot2docker-vm shell, back at the Windows Command Prompt
 
-**docker ps**
+    ````
+    boot2docker down
+    boot2docker destroy
+    ````
 
-**docker stop CONTAINER_ID**
+    and to re-make the boot2docker-vm
 
-**docker kill CONTAINER_ID**
+    ````
+    boot2docker init
+    boot2docker up
+    ````
 
-Replace CONTAINER_ID with the id seen in the "docker ps" results.
-
-23b) Remove/Delete all images
-
-**docker rmi \`docker images -a -q\`**
-
-Note: watch those back ticks again
-
-23c) Exit the boot2docker-vm shell, back at the Windows Command Prompt
-
-**boot2docker down**
-
-**boot2docker destroy**
-
-and to re-make the boot2docker-vm
-
-**boot2docker init**
-
-**boot2docker up**
-
-Note: On Windows, C:\Users\burr\\.boot2docker
-contain files associated with your installation and I have seen .boot2docker not be uninstalled properly, manual deletion may be necessary
-
+    > On Windows `C:\Users\burr\\.boot2docker` contain files associated with your installation and I have seen .boot2docker not be uninstalled properly, manual deletion may be necessary
 
 The End (for now)
 
