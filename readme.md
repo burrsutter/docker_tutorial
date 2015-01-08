@@ -9,23 +9,26 @@ First follow [installation steps](https://docs.docker.com/installation/windows/)
 
 Unless you already have VirtualBox installed, install all the components.
 
-Mac: The docker and boot2docker binaries are in /usr/local/bin which you can access from your terminal. 
+> Mac: The docker and boot2docker binaries are in `/usr/local/bin` which you can access from your terminal. 
+> Windows: The boot2docker binary lands in `C:\Program Files\Boot2Docker` for Windows
 
-Windows: The boot2docker binary lands in C:\Program Files\Boot2Docker for Windows
+* * * 
+##### Tip 1: where does the boot2docker VM (ISO) land on a Windows?*
+Windows: `C:\Users\Burr\\.boot2docker\boot2docker.iso`
+Mac: `~/.boot2docker/boot2docker.iso`
+* * * 
 
-Tip 1: where does the boot2docker VM (ISO) land on a Windows?
+* * *
+##### Tip 2: where does the boot2docker instance land on Windows installation of VirtualBox
 
-Windows: C:\Users\Burr\\.boot2docker\boot2docker.iso
-
-Mac: ~/.boot2docker/boot2docker.iso
-
-Tip 2: where does the boot2docker instance land on Windows installation of VirtualBox
-
-D:\Users\Burr\.VirtualBox\Machines\boot2docker-vm\Snapshots
+    D:\Users\Burr\.VirtualBox\Machines\boot2docker-vm\Snapshots
 
 Note: I have virtual box using a different drive on my machine
+* * *
 
-Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
+* * *
+##### Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
+* * *
 
 ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
 
