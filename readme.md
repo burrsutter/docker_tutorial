@@ -23,63 +23,64 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     D:\Users\Burr\.VirtualBox\Machines\boot2docker-vm\Snapshots
 
-Note: I have virtual box using a different drive on my machine
+> I have virtual box using a different drive on my machine
 * * *
 
 * * *
 ##### Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
-* * *
 
 ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
+* * *
 
-**commands are in bold** - type them in and hit Enter
+Now, let's explore a few of the commands available:
 
-1) **boot2docker version**
+1. `boot2docker version`
+    ![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") 
+    > VirtualBox installed prior to boot2docker has no mention of boot2docker until we use "boot2docker init".
+    > Also, if you have previously installed boot2docker, you can often use "boot2docker upgrade" to simply update to the latest version.
 
-![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") 
+2. `boot2docker init`
+    ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
+    ![Alt text](/screenshots/virtualbox_after_boot2docker.png?raw=true "VirtualBox After")
 
-Note: VirtualBox installed prior to boot2docker has no mention of boot2docker until we use "boot2docker init".
-Also, if you have previously installed boot2docker, you can often use "boot2docker upgrade" to simply update to the latest version.
+3. `boot2docker up`
 
-2) **boot2docker init**
-![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
+    Watch for the following on _Mac OSX_
+    
+    ````
+    To connect the Docker client to the Docker daemon, please set:
 
-![Alt text](/screenshots/virtualbox_after_boot2docker.png?raw=true "VirtualBox After")
+    export DOCKER_TLS_VERIFY=1
 
+    export DOCKER_HOST=tcp://192.168.59.103:2376
 
-3) **boot2docker up**
+    export DOCKER_CERT_PATH=/Users/burr/.boot2docker/certs/boot2docker-vm
+    ````
+    ![Alt text](/screenshots/macosx_env_vars.png?raw=true "Mac OSX Env Vars")
 
-watch for the following on _Mac OSX_
-To connect the Docker client to the Docker daemon, please set:
+    copy & paste those to execute, if you fail you might see the following
 
-export DOCKER_TLS_VERIFY=1
+    ![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
+    on _Windows_ it says:
+    ````
+    > Waiting for VM and Docker daemon to start...
+    > .....................ooooooooooooooooooooooooooo
+    > Started.
+    > Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\ca.pem
+    > Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\cert.pem
+    > Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\key.pem
+    >
+    
+    > Docker client does not run on Windows for now. Please use
+    >    "boot2docker" ssh
+    > to SSH into the VM instead.
+    ````
 
-export DOCKER_CERT_PATH=/Users/burr/.boot2docker/certs/boot2docker-vm
+    ![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
 
-![Alt text](/screenshots/macosx_env_vars.png?raw=true "Mac OSX Env Vars")
-
-copy & paste those to execute, if you fail you might see the following
-
-![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
-
-on _Windows_ it says:
-> Waiting for VM and Docker daemon to start...
-> .....................ooooooooooooooooooooooooooo
-> Started.
-> Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\ca.pem
-> Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\cert.pem
-> Writing C:\Users\Burr\.boot2docker\certs\boot2docker-vm\key.pem
->
-> Docker client does not run on Windows for now. Please use
->    "boot2docker" ssh
-> to SSH into the VM instead.
-
-![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
-
-And if you check on VirtualBox you will see the boot2docker-vm Running
-![Alt text](/screenshots/after_boot2docker_up_virtual_box.png?raw=true "boot2docker up results in VirtualBox")
+    And if you check on VirtualBox you will see the boot2docker-vm Running
+    ![Alt text](/screenshots/after_boot2docker_up_virtual_box.png?raw=true "boot2docker up results in VirtualBox")
 
 
 4) **boot2docker status**
