@@ -85,7 +85,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     ![Alt text](/screenshots/boot2docker_start_sh.png?raw=true "start.sh")
 
-    > If you successfully launch start.sh, it will execute up, status and ip, therefore you can skip to step 7 below.
+    > If you successfully launch start.sh, it will execute `up`, `status` and `ip`, therefore you can skip to step 7 below.
     > Do make note of the IP address that is printed out, you will need it later.
 
     ![Alt text](/screenshots/start_sh_running.png?raw=true "start.sh running")
