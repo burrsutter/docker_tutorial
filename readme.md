@@ -9,14 +9,14 @@ First follow [installation steps](https://docs.docker.com/installation/windows/)
 
 Unless you already have VirtualBox installed, install all the components.
 
-> Mac: The docker and boot2docker binaries are in `/usr/local/bin` which you can access from your terminal. 
+> Mac: The docker and boot2docker binaries are in `/usr/local/bin` which you can access from your terminal.
 > Windows: The boot2docker binary lands in `C:\Program Files\Boot2Docker` for Windows
 
-* * * 
+* * *
 ##### Tip 1: where does the boot2docker VM (ISO) land on a Windows?*
 Windows: `C:\Users\Burr\\.boot2docker\boot2docker.iso`
 Mac: `~/.boot2docker/boot2docker.iso`
-* * * 
+* * *
 
 ##### Tip 2: where does the boot2docker instance land on Windows installation of VirtualBox
 
@@ -30,12 +30,19 @@ Mac: `~/.boot2docker/boot2docker.iso`
 ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
 * * *
 
+##### Tip 4: VirtualBox before `boot2docker init`
+![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before")
+> VirtualBox installed prior to boot2docker has no mention of boot2docker until we use `boot2docker init`.
+> Also, if you have previously installed boot2docker, you can often use `boot2docker upgrade` to simply update to the latest version.
+* * *
+
 #### Explore Docker
 
-1. `boot2docker version`
-    ![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before") 
-    > VirtualBox installed prior to boot2docker has no mention of boot2docker until we use `boot2docker init`.
-    > Also, if you have previously installed boot2docker, you can often use `boot2docker upgrade` to simply update to the latest version.
+1. Open a command prompt aka "cmd.exe" and type `boot2docker version`
+
+    ![Alt text](/screenshots/boot2docker_version.png?raw=true "Command Prompt boot2docker version")
+    > We have seen this fail on some systems.  
+
 
 2. `boot2docker init`
     ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
@@ -44,7 +51,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 3. `boot2docker up`
 
     Watch for the following on _Mac OSX_:
-    
+
     ![Alt text](/screenshots/macosx_env_vars.png?raw=true "Mac OSX Env Vars")
 
     Copy and paste the export statements you are provided with in to your terminal. If you get this step wrong, when you try further commands, you may see an error message like:
@@ -56,7 +63,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
     ![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
 
     Now, if you check the VirtualBox GUI you will see the `boot2docker-vm` running:
-    
+
     ![Alt text](/screenshots/after_boot2docker_up_virtual_box.png?raw=true "boot2docker up results in VirtualBox")
 
 4. `boot2docker status`
@@ -78,7 +85,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 9. `docker`
     ![Alt text](/screenshots/docker_lists_commands.png?raw=true "docker info")
- 
+
 10. `docker images`
 
 11. `docker ps -a`
@@ -111,8 +118,8 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 14. `docker run -i -t centos /bin/bash`
     ````
-    -i interactive 
-    -t allows your keyboard input 
+    -i interactive
+    -t allows your keyboard input
     ````
 
     You can also use `-it` as well as `-i -t`.  Remember this trick - if you have an app server failing to start,  you can see the console output and review the logs by using "-it"
@@ -136,7 +143,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 17. `docker images`
 
-    shows local images 
+    shows local images
     ![Alt text](/screenshots/docker_images.png?raw=true "docker images")
 
 18. `docker pull centos/wildfly`
@@ -202,7 +209,7 @@ is shared with the boot2docker-vm (thanks to VirtualBox Guest Additions). In you
     cd /c/Users/Burr/docker_projects/myapp
     ````
 
-2. In the `myapp` directory, create a text file called `Dockerfile`, with no extension. 
+2. In the `myapp` directory, create a text file called `Dockerfile`, with no extension.
 
     > On Windows we recommend using Notepad++ for text editing.
 
@@ -292,4 +299,3 @@ OPTIONAL - Clean Slate: If you wish to completely clean up and run through the a
     > On Windows `C:\Users\burr\\.boot2docker` contain files associated with your installation and I have seen .boot2docker not be uninstalled properly, manual deletion may be necessary
 
 The End (for now)
-
