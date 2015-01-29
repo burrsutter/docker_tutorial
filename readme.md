@@ -41,8 +41,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 1. Open a command prompt aka "cmd.exe" and type `boot2docker version`
 
     ![Alt text](/screenshots/boot2docker_version.png?raw=true "Command Prompt boot2docker version")
-    > We have seen this fail on some systems.  
-
+    > We have seen this fail on some systems.  There will be some workarounds listed in the steps below.
 
 2. `boot2docker init`
     ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
@@ -65,6 +64,13 @@ Mac: `~/.boot2docker/boot2docker.iso`
     Now, if you check the VirtualBox GUI you will see the `boot2docker-vm` running:
 
     ![Alt text](/screenshots/after_boot2docker_up_virtual_box.png?raw=true "boot2docker up results in VirtualBox")
+
+    Watch out for "VT-x is disabled in BIOS" errors
+    If virtualization has not been enabled in your machines BIOS, you could see the following
+    error:
+    ![Alt text](/screenshots/virtualization_error.png?raw=true "virtualization error")
+    
+
 
 4. `boot2docker status`
     > When it is time to shutdown, run `boot2docker down`
