@@ -142,7 +142,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     ![Alt text](/screenshots/ls_l_c_users_Burr_demo.png?raw=true "ls -l /c/Users/Burr/demo")
 
-    In this example, there are already some sample projects:
+    In this screenshot, I already some sample projects in my C:\Users\Burr\demo directory
 
     ![Alt text](/screenshots/windows_explorer.png?raw=true "Windows Explorer")
 
@@ -154,6 +154,8 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     You can also use `-it` as well as `-i -t`.  Remember this trick - if you have an app server failing to start,  you can see the console output and review the logs by using "-it"
 
+    You are now running inside of the Centos-based container, to prove that point, use the following command
+
     `cat /etc/system-release`
 
     ![Alt text](/screenshots/cat_etc_system_release.png?raw=true "cat /etc/system-release")
@@ -162,7 +164,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 15. `docker ps`
 
-    There should be no currently running containers since `exit` terminated the centos container
+    There should be no currently running containers since `exit` terminated the last centos container
     ![Alt text](/screenshots/docker_ps.png?raw=true "docker ps")
 
 16. `docker ps -a`
