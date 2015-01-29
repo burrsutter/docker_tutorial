@@ -70,6 +70,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     > Watch out for "VT-x is disabled in BIOS" errors
     > If virtualization has not been enabled in your machines BIOS, you could see the following error:
+
     ![Alt text](/screenshots/virtualization_error.png?raw=true "virtualization error")
 
     > If you see this error, you will need to update your BIOS settings accordingly.  
@@ -78,6 +79,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
     > Error requesting socket: exec: "ssh": executable file not found in %PATH%
     > The workaround here is to use start.sh to launch the command prompt (not the normal Windows command prompt)
     > You should be able to double-click on start.sh in C:\Program Files\Boot2Docker for Windows
+
     ![Alt text](/screenshots/boot2docker_start_sh.png?raw=true "start.sh")
 
 4. `boot2docker status`
