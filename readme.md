@@ -45,6 +45,9 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 2. `boot2docker init`
     ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
+
+    > You should see the boot2docker-vm listed in VirtualBox Manager
+
     ![Alt text](/screenshots/virtualbox_after_boot2docker.png?raw=true "VirtualBox After")
 
 3. `boot2docker up`
@@ -61,16 +64,21 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     ![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
 
-    Now, if you check the VirtualBox GUI you will see the `boot2docker-vm` running:
+    > Now, if you check the VirtualBox GUI you will see the `boot2docker-vm` running:
 
     ![Alt text](/screenshots/after_boot2docker_up_virtual_box.png?raw=true "boot2docker up results in VirtualBox")
 
-    Watch out for "VT-x is disabled in BIOS" errors
-    If virtualization has not been enabled in your machines BIOS, you could see the following
-    error:
+    > Watch out for "VT-x is disabled in BIOS" errors
+    > If virtualization has not been enabled in your machines BIOS, you could see the following error:
     ![Alt text](/screenshots/virtualization_error.png?raw=true "virtualization error")
-    
 
+    > If you see this error, you will need to update your BIOS settings accordingly.  
+
+    > Also watch out for
+    > Error requesting socket: exec: "ssh": executable file not found in %PATH%
+    > The workaround here is to use start.sh to launch the command prompt (not the normal Windows command prompt)
+    > You should be able to double-click on start.sh in C:\Program Files\Boot2Docker for Windows
+    ![Alt text](/screenshots/boot2docker_start_sh.png?raw=true "start.sh")
 
 4. `boot2docker status`
     > When it is time to shutdown, run `boot2docker down`
