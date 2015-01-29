@@ -136,7 +136,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     This shared folder will allow you to add and edit files using your traditional Windows tools instead of having to learn vi or nano.
 
-    Create a `demo` sub-directory to your home directory and then use a `ls -l` to see it via the boot2docker-vm (in this example `Burr` is the username):
+    Using your File Explorer, create a `demo` sub-directory to your home directory and then use a `ls -l` to see it via the boot2docker-vm (in this example `Burr` is the username):
 
     `ls -l /c/Users/Burr/demo`
 
