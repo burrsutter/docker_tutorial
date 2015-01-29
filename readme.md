@@ -121,8 +121,9 @@ Mac: `~/.boot2docker/boot2docker.iso`
     ![Alt text](/screenshots/docker_run_centos.png?raw=true "docker run centos")
 
     This will take some time if this is the first run of the "centos" image
+    
     If you run the same command again, you will notice that is runs immediately, no download required.
-    A Docker container starts incredibly fast when compared to traditional virtual machine technology
+    A Docker container starts incredibly fast when compared to traditional virtual machine technology.
 
 13. On Windows, with boot2docker 1.3.x, the Users directory is shared as `/c/Users`
 
