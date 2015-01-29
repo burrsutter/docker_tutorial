@@ -60,7 +60,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     ![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
 
-    Watch for the following on _Windows_:
+    Look for the following on _Windows_:
 
     ![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
 
@@ -84,6 +84,11 @@ Mac: `~/.boot2docker/boot2docker.iso`
     > You should be able to double-click on start.sh in C:\Program Files\Boot2Docker for Windows
 
     ![Alt text](/screenshots/boot2docker_start_sh.png?raw=true "start.sh")
+
+    > If you successfully launch start.sh, it will execute up, status and ip, therefore you can skip to step 7 below.
+    > Do make note of the IP address that is printed out, you will need it later.
+    ![Alt text](/screenshots/start_sh_running.png?raw=true "start.sh running")
+
 
 4. `boot2docker status`
     > When it is time to shutdown, run `boot2docker down`
