@@ -273,6 +273,7 @@ You can create the directory from within the boot2docker-vm with the following c
 
     Use the docker `docker images` command to see if the image was created
 
+    ![Alt text](/screenshots/after_docker_build.png?raw=true "after docker build")
 
 5. Let's see if that worked
 
