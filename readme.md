@@ -333,6 +333,6 @@ OPTIONAL - Clean Slate: If you wish to completely clean up and run through the a
     boot2docker up
     ````
 
-    > On Windows `C:\Users\burr\\.boot2docker` contain files associated with your installation and I have seen .boot2docker not be uninstalled properly, manual deletion may be necessary
+    > On Windows `C:\Users\burr\.boot2docker` contain files associated with your installation and I have seen .boot2docker not be uninstalled properly, manual deletion may be necessary
 
 The End (for now)
