@@ -148,7 +148,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 14. `docker run -i -t centos /bin/bash`
     ````
-    -i interactive
+    -i means interactive and
     -t allows your keyboard input
     ````
 
@@ -160,7 +160,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     ![Alt text](/screenshots/cat_etc_system_release.png?raw=true "cat /etc/system-release")
 
-    type `exit` to leave the container and drop back into the boot2docker-vm shell.
+    Type `exit` to leave the container and drop back into the boot2docker-vm shell.
 
 15. `docker ps`
 
@@ -221,6 +221,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 1. If you remember way back to `ls /c/Users/Burr/demo`, the `Users` directory on your Windows host
 is shared with the boot2docker-vm (thanks to VirtualBox Guest Additions). In your home directory, create a directory called `docker_projects` that is a sibling of `demo`.
+You can create the directory from within the boot2docker-vm with the following command (or just use File Explorer).
 
     ````
     mkdir /c/Users/Burr/docker_projects
@@ -270,6 +271,9 @@ is shared with the boot2docker-vm (thanks to VirtualBox Guest Additions). In you
 
     ![Alt text](/screenshots/docker_build.png?raw=true "docker build")
 
+    Use the docker `docker images` command to see if the image was created
+
+
 5. Let's see if that worked
 
     ````
@@ -291,7 +295,7 @@ OPTIONAL - Clean Slate: If you wish to completely clean up and run through the a
 1. Remove/Delete all containers
 
     ````
-    docker rm \`docker ps -a -q\`
+    docker rm `docker ps -a -q`
     ````
 
     >  the back ticks are important!
@@ -309,7 +313,7 @@ OPTIONAL - Clean Slate: If you wish to completely clean up and run through the a
 2. Remove/Delete all images
 
     ````
-    docker rmi \`docker images -a -q\`
+    docker rmi `docker images -a -q`
     ````
 
     > watch those back ticks again
