@@ -335,4 +335,5 @@ OPTIONAL - Clean Slate: If you wish to completely clean up and run through the a
 
     > On Windows `C:\Users\burr\.boot2docker` contain files associated with your installation and I have seen .boot2docker not be uninstalled properly, manual deletion may be necessary
 
-The End (for now)
+Check out the follow-on tutorial for adding MySQL.
+<https://github.com/burrsutter/docker_mysql_tutorial>
