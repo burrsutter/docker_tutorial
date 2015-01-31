@@ -77,15 +77,20 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     > Also watch out for
     >
-    > Error requesting socket: exec: "ssh": executable file not found in %PATH%
+
+    `Error requesting socket: exec: "ssh": executable file not found in %PATH%`
+
+
+    > The workaround here is to use start.sh to launch the Docker command prompt
+
+    ![Alt text](/screenshots/boot2docker_start_menu.png?raw=true "Windows Start Menu")
+
     >
-    > The workaround here is to use start.sh to launch the command prompt (not the normal Windows command prompt)
-    >
-    > You should be able to double-click on start.sh in C:\Program Files\Boot2Docker for Windows
+    > Or you could double-click on start.sh in C:\Program Files\Boot2Docker for Windows
 
     ![Alt text](/screenshots/boot2docker_start_sh.png?raw=true "start.sh")
 
-    > If you successfully launch start.sh, it will execute `up`, `status` and `ip`, therefore you can skip to step 7 below.
+    > If you successfully launch start.sh, it will execute `init`, `up`, `status` and `ip`, therefore you can skip to step 7 below.
     > Do make note of the IP address that is printed out, you will need it later.
 
     ![Alt text](/screenshots/start_sh_running.png?raw=true "start.sh running")
