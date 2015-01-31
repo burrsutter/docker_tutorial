@@ -81,7 +81,8 @@ Mac: `~/.boot2docker/boot2docker.iso`
     `Error requesting socket: exec: "ssh": executable file not found in %PATH%`
 
 
-    > The workaround here is to use start.sh to launch the Docker command prompt
+    > The workaround here is to use start.sh to launch the Docker command prompt, look for Boot2Docker Start in your Start Menu
+    >
 
     ![Alt text](/screenshots/boot2docker_start_menu.png?raw=true "Windows Start Menu")
 
