@@ -159,6 +159,8 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     You can also use `-it` as well as `-i -t`.  Remember this trick - if you have an app server failing to start,  you can see the console output and review the logs by using "-it"
 
+    If this is your first time running the centos image, it may take over a minute to download.
+
     You are now running inside of the Centos-based container, to prove that point, use the following command
 
     `cat /etc/system-release`
