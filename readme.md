@@ -94,12 +94,13 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 
 4. `boot2docker status`
-    > When it is time to shutdown, run `boot2docker down`
+    > Note: When it is time to shutdown, run `boot2docker down`
 
 5. `boot2docker ip`
     ![Alt text](/screenshots/boot2docker_ip.png?raw=true "boot2docker ip")
 
     > You will need this later!
+
 6. `boot2docker ssh`
     ![Alt text](/screenshots/boot2docker_ssh.png?raw=true "boot2docker ssh")
 
@@ -147,6 +148,8 @@ Mac: `~/.boot2docker/boot2docker.iso`
     In this screenshot, I already some sample projects in my C:\Users\Burr\demo directory
 
     ![Alt text](/screenshots/windows_explorer.png?raw=true "Windows Explorer")
+
+    Note: We won't be using "demo" in this tutorial, the goal here was to let you see the connection between /c/Users and C:\Users
 
 14. `docker run -i -t centos /bin/bash`
     ````
