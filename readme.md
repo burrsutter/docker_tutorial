@@ -325,9 +325,19 @@ You can create the directory from within the boot2docker-vm with the following c
     docker run -d -p 8080:8080 myapp
     ````
 
+    ![Alt text](/screenshots/docker_run_d.png?raw=true "docker run -d -p 8080:8080 myapp")
+
+
     > If detached, you will need to use `docker ps` to see the active containers and then use `docker stop CONTAINER_ID` and `docker rm CONTAINER_ID`
     >
-    ![Alt text](/screenshots/docker_run_d.png?raw=true "docker run -d -p 8080:8080 myapp")
+
+    > Note: Docker automatically generated the name "agitated_hawking" which you can use instead of the CONTAINER_ID
+
+    ![Alt text](/screenshots/docker_rm_agitated_hawking.png?raw=true "docker rm agitated_hawking")
+
+
+2. Container naming
+
 
 
 #### Cleanup
