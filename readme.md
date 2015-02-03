@@ -220,7 +220,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     ![Alt text](/screenshots/docker_run_it_p_8080_8080.png?raw=true "docker run -it -p 8080:8080 centos/wildfly")
 
-    Now, if you remember the IP address you can use your favorite browser to hit the server.
+    If you remember the IP address you can use your favorite browser to hit the server.
     If you forgot to make note of your IP address earlier, you can open another session into boot2docker.  Just go back to the Windows Start menu and select `Boot2Docker Start` or run start.sh.  You might wish to keep both boot2docker sessions open as it allows you to docker run an app server via "-it" in one window and then "docker ps" or "docker logs" in another window.
 
     ![Alt text](/screenshots/browser_wildfly.png?raw=true "http://192.168.59.103:8080")
@@ -250,9 +250,11 @@ You can create the directory from within the boot2docker-vm with the following c
     mkdir /c/Users/Burr/docker_projects/myapp
     ````
 
+    > You can create the "myapp" directory via Windows Explorer or the boot2docker-vm shell
+
     ![Alt text](/screenshots/windows_explorer_myapp.png?raw=true "Windows Explorer myapp")
 
-    and then change to the directory
+    and then change to the directory, it is important that you do this inside of the boot2docker-vm shell
 
     ````
     cd /c/Users/Burr/docker_projects/myapp
@@ -260,7 +262,7 @@ You can create the directory from within the boot2docker-vm with the following c
 
 2. In the `myapp` directory, create a text file called `Dockerfile`, with no extension.
 
-    > On Windows we recommend using Notepad++ for text editing.
+    > On Windows you might use Notepad++ for text editing.
 
     ![Alt text](/screenshots/dockerfile_windows_explorer.png?raw=true "Windows Explorer Dockerfile")
 
@@ -270,12 +272,12 @@ You can create the directory from within the boot2docker-vm with the following c
     ````
     FROM centos/wildfly
 
-    ADD html5java.war /opt/wildfly/standalone/deployments/
+    ADD javaee6angularjsmysql.war /opt/wildfly/standalone/deployments/
     ````
 
     > The trailing "/" does matter
 
-    You can find `html5java.war` at <https://github.com/burrsutter/docker_tutorial/blob/master/html5java.war?raw=true>. Download the war and copy it to the `myapp` directory.
+    > You can find `javaee6angularjsmysql.war` at <https://github.com/burrsutter/docker_tutorial/blob/master/javaee6angularjsmysql.war?raw=true>. Download the war and copy it to the `myapp` directory.
 
 4. Back in the boot2docker ssh session
 
