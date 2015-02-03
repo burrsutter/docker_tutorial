@@ -262,7 +262,7 @@ You can create the directory from within the boot2docker-vm with the following c
 
 2. In the `myapp` directory, create a text file called `Dockerfile`, with no extension.
 
-    > On Windows you might use Notepad++ for text editing.
+    > On Windows you might use the Atom editor from Atom.io for text editing.
 
     ![Alt text](/screenshots/dockerfile_windows_explorer.png?raw=true "Windows Explorer Dockerfile")
 
@@ -395,7 +395,7 @@ OPTIONAL - Clean Slate: If you wish to completely clean up and run through the a
     or if boot2docker from the command line is causing you problems, there is
     "Delete Boot2Docker VM" Start menu option which maps to delete.sh
 
-    
+
     and to re-make the boot2docker-vm
 
     ````
