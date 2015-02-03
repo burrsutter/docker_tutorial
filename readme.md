@@ -366,12 +366,11 @@ OPTIONAL - Clean Slate: If you wish to completely clean up and run through the a
     docker rm `docker ps -a -q`
     ````
 
-    >  the back ticks are important!
+    >  the back ticks are important! You might also need to "stop" or "kill" any containers that are running and will not remove.
+
 
     ````
-    You might also need to "stop" or "kill" any containers that are running and will not remove.
-
-    docker ps
+    docker ps -a
     docker stop CONTAINER_ID
     docker kill CONTAINER_ID
     ````
@@ -393,6 +392,10 @@ OPTIONAL - Clean Slate: If you wish to completely clean up and run through the a
     boot2docker destroy
     ````
 
+    or if boot2docker from the command line is causing you problems, there is
+    "Delete Boot2Docker VM" Start menu option which maps to delete.sh
+
+    
     and to re-make the boot2docker-vm
 
     ````
