@@ -346,6 +346,15 @@ You can create the directory from within the boot2docker-vm with the following c
 
     ![Alt text](/screenshots/myapp_is_running.png?raw=true "docker run --name=myapp_is_running -d -p 8080:8080 myapp")
 
+3. Viewing logs
+
+    ````
+    docker logs myapp_is_running
+    ````
+
+    > and you can `docker stop myapp_is_running` when it is time to shutdown the -d detached app server container
+
+    ![Alt text](/screenshots/docker_stop_myapp_is_running.png?raw=true "docker stop myapp_is_running")
 
 #### Cleanup
 
