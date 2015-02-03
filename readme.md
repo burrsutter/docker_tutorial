@@ -338,6 +338,13 @@ You can create the directory from within the boot2docker-vm with the following c
 
 2. Container naming
 
+    > Adding a --name=some_name allows you to give override the default name of agitated_hawking or whatever was randomly assigned to your container by Docker
+
+    ````
+    docker run --name=myapp_is_running -d -p 8080:8080 myapp
+    ````
+
+    ![Alt text](/screenshots/myapp_is_running.png?raw=true "docker run --name=myapp_is_running -d -p 8080:8080 myapp")
 
 
 #### Cleanup
