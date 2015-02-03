@@ -314,7 +314,9 @@ You can create the directory from within the boot2docker-vm with the following c
     > Now it is time for a victory dance, you have your first Java EE application deployed as part of a Docker container.
     > Remember, Ctrl-C to shut down the app server.
 
+
 #### Extra Credit
+
 
     > You could also use a -d instead of -it to run the container detached, in the background
 
