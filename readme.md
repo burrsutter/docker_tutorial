@@ -302,13 +302,13 @@ You can create the directory from within the boot2docker-vm with the following c
 
     you should see the deployment of `javaee6angularjs.war` in the wildfly console logging
 
-    ![Alt text](/screenshots/html5java_war_deployment.png?raw=true "docker run -it -p 8080:8080 myapp")
+    ![Alt text](/screenshots/javaee6angularjs_myapp_startup.png?raw=true "docker run -it -p 8080:8080 myapp")
 
-6. And test the app via your browser <http://192.168.59.104:8080/javaee6angularjs>
+6. And test the app via your browser <http://192.168.59.105:8080/javaee6angularjs>
 
     > The IP address in my screenshots change from time to time as this document has been maintained. Just make sure to remember YOUR IP address as seen via start.sh or boot2docker ip
 
-    ![Alt text](/screenshots/browser_javaee6angularjs_myapp.png?raw=true "http://192.168.59.104:8080/javaee6angularjs")
+    ![Alt text](/screenshots/browser_javaee6angularjs_myapp.png?raw=true "http://192.168.59.105:8080/javaee6angularjs")
 
 #### Cleanup
 
