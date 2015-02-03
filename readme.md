@@ -52,14 +52,6 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 3. `boot2docker up`
 
-    Watch for the following on _Mac OSX_:
-
-    ![Alt text](/screenshots/macosx_env_vars.png?raw=true "Mac OSX Env Vars")
-
-    Copy and paste the export statements you are provided with in to your terminal. If you get this step wrong, when you try further commands, you may see an error message like:
-
-    ![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
-
     Look for the following on _Windows_:
 
     ![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
@@ -89,6 +81,16 @@ Mac: `~/.boot2docker/boot2docker.iso`
     > Do make note of the IP address that is printed out, you will need it later.
 
     ![Alt text](/screenshots/start_sh_running.png?raw=true "start.sh running")
+
+
+    Watch for the following on _Mac OSX_:
+
+    ![Alt text](/screenshots/macosx_env_vars.png?raw=true "Mac OSX Env Vars")
+
+    Copy and paste the export statements you are provided with in to your terminal. If you get this step wrong, when you try further commands, you may see an error message like:
+
+    ![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
+
 
 
 4. `boot2docker status`
