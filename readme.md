@@ -221,12 +221,10 @@ Mac: `~/.boot2docker/boot2docker.iso`
     ![Alt text](/screenshots/docker_run_it_p_8080_8080.png?raw=true "docker run -it -p 8080:8080 centos/wildfly")
 
     Now, if you remember the IP address you can use your favorite browser to hit the server.
-    If you forgot to make note of your IP address earlier, you can open another session into boot2docker.  Just go back to the Windows Start menu and select `Boot2Docker Start`.
+    If you forgot to make note of your IP address earlier, you can open another session into boot2docker.  Just go back to the Windows Start menu and select `Boot2Docker Start` or run start.sh.  You might wish to keep both boot2docker sessions open as it allows you to docker run an app server via "-it" in one window and then "docker ps" or "docker logs" in another window.
 
     ![Alt text](/screenshots/browser_wildfly.png?raw=true "http://192.168.59.103:8080")
 
-    If you have forgotten your IP address, just open another Command Prompt and type "boot2docker ip"
-    ![Alt text](/screenshots/boot2docker_ip_2nd_command_prompt.png?raw=true "boot2docker ip")
 
     Press `Ctrl-C` to terminate the WildFly container.
 
