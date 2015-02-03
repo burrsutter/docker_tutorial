@@ -304,11 +304,28 @@ You can create the directory from within the boot2docker-vm with the following c
 
     ![Alt text](/screenshots/javaee6angularjs_myapp_startup.png?raw=true "docker run -it -p 8080:8080 myapp")
 
+
 6. And test the app via your browser <http://192.168.59.105:8080/javaee6angularjs>
 
     > The IP address in my screenshots change from time to time as this document has been maintained. Just make sure to remember YOUR IP address as seen via start.sh or boot2docker ip
 
     ![Alt text](/screenshots/browser_javaee6angularjs_myapp.png?raw=true "http://192.168.59.105:8080/javaee6angularjs")
+
+    > Now it is time for a victory dance, you have your first Java EE application deployed as part of a Docker container.
+    > Remember, Ctrl-C to shut down the app server.
+
+#### Extra Credit
+
+    > You could also use a -d instead of -it to run the container detached, in the background
+
+    ````
+    docker run -d -p 8080:8080 myapp
+    ````
+
+    > If detached, you will need to use `docker ps` to see the active containers and then use `docker stop CONTAINER_ID` and `docker rm CONTAINER_ID`
+    >
+    ![Alt text](/screenshots/docker_run_d.png?raw=true "docker run -d -p 8080:8080 myapp")
+
 
 #### Cleanup
 
