@@ -277,7 +277,8 @@ You can create the directory from within the boot2docker-vm with the following c
 
     > The trailing "/" does matter
 
-    > You can find `javaee6angularjsmysql.war` at <https://github.com/burrsutter/docker_tutorial/blob/master/javaee6angularjsmysql.war?raw=true>. Download the war and copy it to the `myapp` directory.
+    > You can find `javaee6angularjsmysql.war` at <https://github.com/burrsutter/docker_tutorial/blob/master/javaee6angularjsmysql.war?raw=true>
+    > Download the war and copy it to the `myapp` directory.
 
 4. Back in the boot2docker ssh session
 
