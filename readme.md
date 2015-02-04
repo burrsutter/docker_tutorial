@@ -107,6 +107,10 @@ You can make this change on the Boot2Docker Start command window as well
 
     > If you see this error, you will need to update your BIOS settings accordingly.  
 
+    > BIOS for Lenovo T440s
+
+    ![Alt text](/screenshots/bios_lenovo_t440s.jpg?raw=true "Virtualization in Lenovo T440s BIOS")
+
 
     Watch for the following on _Mac OSX_:
 
