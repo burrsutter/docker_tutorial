@@ -69,9 +69,16 @@ Mac: `~/.boot2docker/boot2docker.iso`
     ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
     > You should see the boot2docker-vm listed in VirtualBox Manager
 
-    > Note: We have seen this fail on some systems.  There will be some workarounds listed in step 3 below.
-
     ![Alt text](/screenshots/virtualbox_after_boot2docker.png?raw=true "VirtualBox After")
+
+    > Note: This might result in
+
+    ````
+    error in run: Error generating new SSH Key into C:\Users\Burr\.ssh\id_boot2docker: exec: "ssh-keygen": executable file not found in %PATH%
+    ````
+
+    > If so, then fall back to the Boot2Docker Start menu option calling "start.sh".
+
 
 
 3. `boot2docker up`
@@ -89,7 +96,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     ![Alt text](/screenshots/virtualization_error.png?raw=true "virtualization error")
 
-    > Or, if you hit the Start button inside Virtual Box directly
+    > Or, if you hit the Start button inside the VirtualBox Manager directly
 
     ![Alt text](/screenshots/VT-x_error_VirtualBox.png?raw=true "virtualization error in VirtualBox Manager")
 
