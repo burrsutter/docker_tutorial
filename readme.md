@@ -38,7 +38,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 #### Explore Docker
 
-0. Look for and select the Boot2Docker Start menu option in your Start Menu.  
+0. Look for and select the `Boot2Docker Start` menu option in your Start Menu
 
     ![Alt text](/screenshots/boot2docker_start_menu.png?raw=true "Start Menu")
 
@@ -56,17 +56,23 @@ Mac: `~/.boot2docker/boot2docker.iso`
     ![Alt text](/screenshots/start_sh_running.png?raw=true "start.sh running")
 
 
-1. Open a command prompt aka "cmd.exe" and type `boot2docker version`
+1. You might also execute boot2docker commands from the Windows (DOS) Command Prompt aka "cmd.exe" and type
+
+    `boot2docker version`
 
     ![Alt text](/screenshots/boot2docker_version.png?raw=true "Command Prompt boot2docker version")
-    > We have seen this fail on some systems.  There will be some workarounds listed in the steps below.
+    > Note: We have seen this fail on some systems.  There will be some workarounds listed in step 3 below.
+
+    > Tip: on Windows 8.1, the Command Prompt is accessible if you hit the Windows key and X then C on the keyboard
 
 2. `boot2docker init`
     ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
-
     > You should see the boot2docker-vm listed in VirtualBox Manager
 
+    > Note: We have seen this fail on some systems.  There will be some workarounds listed in step 3 below.
+
     ![Alt text](/screenshots/virtualbox_after_boot2docker.png?raw=true "VirtualBox After")
+
 
 3. `boot2docker up`
 
