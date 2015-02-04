@@ -107,12 +107,6 @@ You can make this change on the Boot2Docker Start command window as well
 
     > If you see this error, you will need to update your BIOS settings accordingly.  
 
-    > Also watch out for
-
-    ````
-    Error requesting socket: exec: "ssh": executable file not found in %PATH%
-    ````
-
 
     Watch for the following on _Mac OSX_:
 
@@ -138,7 +132,6 @@ You can make this change on the Boot2Docker Start command window as well
 
 8. `docker version`
 
-    > Inside the boot2docker VM, you are living in a Linux shell and using Linux commands
 
 9. `docker info`
     ![Alt text](/screenshots/docker_info.png?raw=true "docker info")
