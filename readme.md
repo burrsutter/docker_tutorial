@@ -13,8 +13,8 @@ Unless you already have VirtualBox installed, install all the components.
 > Windows: The boot2docker binary lands in `C:\Program Files\Boot2Docker` for Windows
 
 * * *
-##### Tip 1: where does the boot2docker VM (ISO) land on a Windows?
-Windows: `C:\Users\Burr\\.boot2docker\boot2docker.iso`
+##### Tip 1: where does the boot2docker VM ISO land on a Windows?
+Windows: `C:\Users\Burr\.boot2docker\boot2docker.iso`
 Mac: `~/.boot2docker/boot2docker.iso`
 * * *
 
@@ -22,7 +22,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     D:\Users\Burr\.VirtualBox\Machines\boot2docker-vm\Snapshots
 
-> I have virtual box using a different drive on my machine
+> Note: I have virtual box using a different drive on my machine
 
 * * *
 ##### Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
@@ -37,6 +37,24 @@ Mac: `~/.boot2docker/boot2docker.iso`
 * * *
 
 #### Explore Docker
+
+0. Look for and select the Boot2Docker Start menu option in your Start Menu.  
+
+    ![Alt text](/screenshots/boot2docker_start_menu.png?raw=true "Start Menu")
+
+    >
+    > Or use start.sh to launch the command prompt (not the normal Windows command prompt)
+    >
+    > You should be able to double-click on start.sh in C:\Program Files\Boot2Docker for Windows
+
+    ![Alt text](/screenshots/boot2docker_start_sh.png?raw=true "start.sh")
+
+
+    > If you successfully launch start.sh, it will execute `up`, `status` and `ip`, therefore you can skip to step 7 below.
+    > Do make note of the IP address that is printed out, you will need it later.
+
+    ![Alt text](/screenshots/start_sh_running.png?raw=true "start.sh running")
+
 
 1. Open a command prompt aka "cmd.exe" and type `boot2docker version`
 
@@ -65,6 +83,10 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
     ![Alt text](/screenshots/virtualization_error.png?raw=true "virtualization error")
 
+    > Or, if you hit the Start button inside Virtual Box directly
+
+    ![Alt text](/screenshots/VT-x_error_VirtualBox.png?raw=true "virtualization error in VirtualBox Manager")
+
     > If you see this error, you will need to update your BIOS settings accordingly.  
 
     > Also watch out for
@@ -72,25 +94,6 @@ Mac: `~/.boot2docker/boot2docker.iso`
     ````
     Error requesting socket: exec: "ssh": executable file not found in %PATH%
     ````
-
-    > The workaround here is to use the Boot2Docker Start menu option in the Windows Start menu
-
-
-    ![Alt text](/screenshots/boot2docker_start_menu.png?raw=true "Start Menu")
-
-
-    >
-    > Or use start.sh to launch the command prompt (not the normal Windows command prompt)
-    >
-    > You should be able to double-click on start.sh in C:\Program Files\Boot2Docker for Windows
-
-    ![Alt text](/screenshots/boot2docker_start_sh.png?raw=true "start.sh")
-
-
-    > If you successfully launch start.sh, it will execute `up`, `status` and `ip`, therefore you can skip to step 7 below.
-    > Do make note of the IP address that is printed out, you will need it later.
-
-    ![Alt text](/screenshots/start_sh_running.png?raw=true "start.sh running")
 
 
     Watch for the following on _Mac OSX_:
@@ -100,7 +103,6 @@ Mac: `~/.boot2docker/boot2docker.iso`
     Copy and paste the export statements you are provided with in to your terminal. If you get this step wrong, when you try further commands, you may see an error message like:
 
     ![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
-
 
 
 4. `boot2docker status`
@@ -117,6 +119,8 @@ Mac: `~/.boot2docker/boot2docker.iso`
     > From this point forward, you will be inside of a Linux shell, using Linux commands
 
 7. `docker version`
+
+    > Inside the boot2docker VM, you are living in a Linux shell and using Linux commands
 
 8. `docker info`
     ![Alt text](/screenshots/docker_info.png?raw=true "docker info")
