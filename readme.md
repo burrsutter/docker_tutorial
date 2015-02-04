@@ -15,19 +15,21 @@ Unless you already have VirtualBox installed, install all the components.
 * * *
 ##### Tip 1: where does the boot2docker VM ISO land on a Windows?
 Windows: `C:\Users\Burr\.boot2docker\boot2docker.iso`
+
 Mac: `~/.boot2docker/boot2docker.iso`
 * * *
 
 ##### Tip 2: where does the boot2docker instance land on Windows installation of VirtualBox
 
-    D:\Users\Burr\.VirtualBox\Machines\boot2docker-vm\Snapshots
-
-> Note: I have virtual box using a different drive on my machine
+    C:\Users\Burr\VirtualBox VMs\boot2docker-vm
 
 * * *
 ##### Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
+    >  You can make this change on the Boot2Docker Start command window as well
 
-![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
+    ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
+
+
 * * *
 
 ##### Tip 4: VirtualBox before `boot2docker init`
@@ -54,6 +56,8 @@ Mac: `~/.boot2docker/boot2docker.iso`
     > Do make note of the IP address that is printed out, you will need it later.
 
     ![Alt text](/screenshots/start_sh_running.png?raw=true "start.sh running")
+
+    > If there are error messages (and there normally are for a brand new installation), read steps 1 through 6 for some alternative ways to get boot2docker up and happy
 
 
 1. You might also execute boot2docker commands from the Windows (DOS) Command Prompt aka "cmd.exe" and type
