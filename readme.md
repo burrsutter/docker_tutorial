@@ -41,7 +41,7 @@ You can make this change on the Boot2Docker Start command window as well
 
 #### Explore Docker
 
-0. Look for and select the `Boot2Docker Start` menu option in your Start Menu
+1. Look for and select the `Boot2Docker Start` menu option in your Start Menu
 
     ![Alt text](/screenshots/boot2docker_start_menu.png?raw=true "Start Menu")
 
@@ -53,15 +53,15 @@ You can make this change on the Boot2Docker Start command window as well
     ![Alt text](/screenshots/boot2docker_start_sh.png?raw=true "start.sh")
 
 
-    > If you successfully launch start.sh, it will execute `up`, `status` and `ip`, therefore you can skip to step 7 below.
+    > If you successfully launch start.sh, it will execute `up`, `status` and `ip`, therefore you can skip to step 8 below.
     > Do make note of the IP address that is printed out, you will need it later.
 
     ![Alt text](/screenshots/start_sh_running.png?raw=true "start.sh running")
 
-    > If there are error messages (and there normally are for a brand new installation), read steps 1 through 6 for some alternative ways to get boot2docker up and happy
+    > If there are error messages (and there normally are for a brand new installation), read steps 2 through 7 for some alternative ways to get boot2docker up and happy
 
 
-1. You might also execute boot2docker commands from the Windows (DOS) Command Prompt aka "cmd.exe" and type
+2. You might also execute boot2docker commands from the Windows (DOS) Command Prompt aka "cmd.exe" and type
 
     `boot2docker version`
 
@@ -70,7 +70,7 @@ You can make this change on the Boot2Docker Start command window as well
 
     > Tip: on Windows 8.1, the Command Prompt is accessible if you hit the Windows key and X then C on the keyboard
 
-2. `boot2docker init`
+3. `boot2docker init`
     ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
     > You should see the boot2docker-vm listed in VirtualBox Manager
 
@@ -86,7 +86,7 @@ You can make this change on the Boot2Docker Start command window as well
 
 
 
-3. `boot2docker up`
+4. `boot2docker up`
 
     Look for the following on _Windows_:
 
@@ -123,35 +123,35 @@ You can make this change on the Boot2Docker Start command window as well
     ![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
 
 
-4. `boot2docker status`
+5. `boot2docker status`
     > Note: When it is time to shutdown, run `boot2docker down`
 
-5. `boot2docker ip`
+6. `boot2docker ip`
     ![Alt text](/screenshots/boot2docker_ip.png?raw=true "boot2docker ip")
 
     > You will need this later!
 
-6. `boot2docker ssh`
+7. `boot2docker ssh`
     ![Alt text](/screenshots/boot2docker_ssh.png?raw=true "boot2docker ssh")
 
     > From this point forward, you will be inside of a Linux shell, using Linux commands
 
-7. `docker version`
+8. `docker version`
 
     > Inside the boot2docker VM, you are living in a Linux shell and using Linux commands
 
-8. `docker info`
+9. `docker info`
     ![Alt text](/screenshots/docker_info.png?raw=true "docker info")
 
-9. `docker`
+10. `docker`
     ![Alt text](/screenshots/docker_lists_commands.png?raw=true "docker info")
 
-10. `docker images`
+11. `docker images`
 
-11. `docker ps -a`
+12. `docker ps -a`
     ![Alt text](/screenshots/docker_ps_a.png?raw=true "docker ps -a")
 
-12. `docker run centos /bin/echo "Hello World"`
+13. `docker run centos /bin/echo "Hello World"`
 
     ![Alt text](/screenshots/docker_run_centos.png?raw=true "docker run centos")
 
@@ -164,7 +164,7 @@ You can make this change on the Boot2Docker Start command window as well
 
     > Note: the container stops as soon as it finishes the /bin/echo command
 
-13. On Windows, with boot2docker 1.3.x, the Users directory is shared as `/c/Users`
+14. On Windows, with boot2docker 1.3.x, the Users directory is shared as `/c/Users`
 
     `ls /c/Users`
     ![Alt text](/screenshots/ls_users.png?raw=true "ls /c/Users")
@@ -183,7 +183,7 @@ You can make this change on the Boot2Docker Start command window as well
 
     Note: We won't be using "demo" in this tutorial, the goal here was to let you see the connection between /c/Users and C:\Users
 
-14. `docker run -i -t centos /bin/bash`
+15. `docker run -i -t centos /bin/bash`
     ````
     -i means interactive and
     -t allows your keyboard input
@@ -201,23 +201,23 @@ You can make this change on the Boot2Docker Start command window as well
 
     Type `exit` to leave the container and drop back into the boot2docker-vm shell.
 
-15. `docker ps`
+16. `docker ps`
 
     There should be no currently running containers since `exit` terminated the last centos container
     ![Alt text](/screenshots/docker_ps.png?raw=true "docker ps")
 
-16. `docker ps -a`
+17. `docker ps -a`
 
     but there have been previously run containers
 
     ![Alt text](/screenshots/docker_ps_a_2.png?raw=true "docker ps -a")
 
-17. `docker images`
+18. `docker images`
 
     shows local images
     ![Alt text](/screenshots/docker_images.png?raw=true "docker images")
 
-18. `docker pull centos/wildfly`
+19. `docker pull centos/wildfly`
 
     Docker Hub contains a large number of pre-configured images that are ready to use via a simple "pull" e.g. <https://registry.hub.docker.com/u/centos/wildfly/>
 
@@ -228,7 +228,7 @@ You can make this change on the Boot2Docker Start command window as well
 
     ![Alt text](/screenshots/docker_pull_centos_wildfly.png?raw=true "docker pull centos/wildfly")
 
-19. `docker run -it centos/wildfly`
+20. `docker run -it centos/wildfly`
 
     ![Alt text](/screenshots/docker_run_centos_wildfly.png?raw=true "docker run -it centos/wildfly")
 
@@ -238,7 +238,7 @@ You can make this change on the Boot2Docker Start command window as well
 
     In this particular case, the WildFly instance does not expose any ports to the outside world, let's try that next.
 
-20. `docker run -it -p 8080:8080 centos/wildfly`
+21. `docker run -it -p 8080:8080 centos/wildfly`
 
     ![Alt text](/screenshots/docker_run_it_p_8080_8080.png?raw=true "docker run -it -p 8080:8080 centos/wildfly")
 
@@ -250,7 +250,7 @@ You can make this change on the Boot2Docker Start command window as well
 
     Press `Ctrl-C` to terminate the WildFly container.
 
-21. `docker history centos/wildfly`
+22. `docker history centos/wildfly`
 
     The history command allows you to see more detail into how the image was crafted
     ![Alt text](/screenshots/docker_history_centos_wildfly.png?raw=true "docker history centos/wildfly")
