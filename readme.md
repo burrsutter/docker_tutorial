@@ -25,6 +25,7 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 * * *
 ##### Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
+
     >  You can make this change on the Boot2Docker Start command window as well
 
     ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
