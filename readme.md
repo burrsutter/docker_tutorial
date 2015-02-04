@@ -21,14 +21,14 @@ Mac: `~/.boot2docker/boot2docker.iso`
 
 ##### Tip 2: where does the boot2docker instance land on Windows installation of VirtualBox
 
-    C:\Users\Burr\VirtualBox VMs\boot2docker-vm
+C:\Users\Burr\VirtualBox VMs\boot2docker-vm
 
 * * *
 ##### Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
 
-    You can make this change on the Boot2Docker Start command window as well
+You can make this change on the Boot2Docker Start command window as well
 
-    ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
+![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
 
 
 * * *
