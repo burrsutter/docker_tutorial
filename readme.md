@@ -286,12 +286,13 @@ You can create the directory from within the boot2docker-vm with the following c
     ![Alt text](/screenshots/dockerfile_windows_explorer.png?raw=true "Windows Explorer Dockerfile")
 
 
-3.  Edit the newly created `Dockerfile` and add the following two lines:
+3.  Edit the newly created `Dockerfile` and add the following four lines:
 
     ````
     FROM centos/wildfly
-
     ADD javaee6angularjs.war /opt/wildfly/standalone/deployments/
+    USER root
+    RUN chown wildfly:wildfly /opt/wildfly/standalone/deployments/javaee6angularjs.war
     ````
 
     > The trailing "/" does matter
