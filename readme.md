@@ -307,8 +307,6 @@ You can create the directory from within the boot2docker-vm with the following c
 
     > the trailing "." is important
 
-    ![Alt text](/screenshots/docker_build.png?raw=true "docker build")
-
     Use the docker `docker images` command to see if the image was created
 
     ![Alt text](/screenshots/after_docker_build.png?raw=true "after docker build")
