@@ -330,6 +330,7 @@ You can create the directory from within the boot2docker-vm with the following c
     USER root
     RUN chown wildfly:wildfly /opt/wildfly/standalone/deployments/javaee6angularjs.war
     ````
+    
 
 6. And test the app via your browser <http://192.168.59.105:8080/javaee6angularjs>
 
