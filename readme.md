@@ -390,11 +390,11 @@ You can create the directory from within the boot2docker-vm with the following c
 
      cd /opt/wildfly/stanalone/log
      tail server.log
-
      ````
 
      > This is a very useful technique if you find things are misbehaving and you wish poke around inside the running container.  
 
+     ![Alt text](/screenshots/docker_exec.png?raw=true "docker exec -it myapp_is_running bash")
 
 #### Cleanup
 
