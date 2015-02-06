@@ -1,7 +1,9 @@
 Docker with boot2docker for Windows Tutorial
 ============================================
 
-This tutorial walks you through the basics of using a Java app server (WildFly) via a Linux container, running on Windows with boot2docker.  There are notes for people running on Macs as well.  
+This tutorial walks you through the basics of using a Java app server (WildFly) via a Linux container, running on Windows with boot2docker.  We have been testing this tutorial on Windows 7 and 8.1, you will notice that the screenshots come from either of those versions as this document has been tested and maintained.
+
+There are notes for people running on Macs as well.
 
 First follow [installation steps](https://docs.docker.com/installation/windows/) for boot2docker:
 
@@ -291,7 +293,7 @@ You can create the directory from within the boot2docker-vm with the following c
     ````
     FROM centos/wildfly
 
-    ADD javaee6angularjs.war /opt/wildfly/standalone/deployments/
+    COPY javaee6angularjs.war /opt/wildfly/standalone/deployments/
     ````
 
     > The trailing "/" does matter
@@ -321,6 +323,13 @@ You can create the directory from within the boot2docker-vm with the following c
 
     ![Alt text](/screenshots/javaee6angularjs_myapp_startup.png?raw=true "docker run -it -p 8080:8080 myapp")
 
+
+    > Note: On Macs, we have seen Wildfly have a permissions problem with the .war.  The workaround is to switch to Root and use chown to make the ajustment to the .war file by adding the following two lines:
+
+    ````
+    USER root
+    RUN chown wildfly:wildfly /opt/wildfly/standalone/deployments/javaee6angularjs.war
+    ````
 
 6. And test the app via your browser <http://192.168.59.105:8080/javaee6angularjs>
 
