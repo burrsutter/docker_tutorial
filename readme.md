@@ -330,7 +330,7 @@ You can create the directory from within the boot2docker-vm with the following c
     USER root
     RUN chown wildfly:wildfly /opt/wildfly/standalone/deployments/javaee6angularjs.war
     ````
-    
+
 
 6. And test the app via your browser <http://192.168.59.105:8080/javaee6angularjs>
 
@@ -382,6 +382,19 @@ You can create the directory from within the boot2docker-vm with the following c
     > and you can `docker stop myapp_is_running` when it is time to shutdown the -d detached app server container
 
     ![Alt text](/screenshots/docker_stop_myapp_is_running.png?raw=true "docker stop myapp_is_running")
+
+4. Dive into a live container
+
+     ````
+     docker exec -it myapp_is_running bash
+
+     cd /opt/wildfly/stanalone/log
+     tail server.log
+
+     ````
+
+     > This is a very useful technique if you find things are misbehaving and you wish poke around inside the running container.  
+
 
 #### Cleanup
 
