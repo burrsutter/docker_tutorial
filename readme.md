@@ -296,13 +296,11 @@ You can create the directory from within the boot2docker-vm with the following c
     COPY javaee6angularjs.war /opt/wildfly/standalone/deployments/
     ````
 
+    > Note: On Macs, we have seen Wildfly have a permissions problem with the .war.  The workaround is to switch to Root and use chown to make the ajustment to the .war file by adding the following two lines:
+
     ````
-    Note: On Mac OSX, you need to add two more lines to the Dockerfile
-
     USER root
-    
-    RUN chown -R wildfly:wildfly /opt/wildfly/standalone/deployments/javaee6angularjs.war
-
+    RUN chown wildfly:wildfly /opt/wildfly/standalone/deployments/javaee6angularjs.war
     ````
 
     > The trailing "/" does matter
@@ -332,13 +330,6 @@ You can create the directory from within the boot2docker-vm with the following c
 
     ![Alt text](/screenshots/javaee6angularjs_myapp_startup.png?raw=true "docker run -it -p 8080:8080 myapp")
 
-
-    > Note: On Macs, we have seen Wildfly have a permissions problem with the .war.  The workaround is to switch to Root and use chown to make the ajustment to the .war file by adding the following two lines:
-
-    ````
-    USER root
-    RUN chown wildfly:wildfly /opt/wildfly/standalone/deployments/javaee6angularjs.war
-    ````
 
 
 6. And test the app via your browser <http://192.168.59.105:8080/javaee6angularjs>
