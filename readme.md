@@ -388,7 +388,7 @@ You can create the directory from within the boot2docker-vm with the following c
      ````
      docker exec -it myapp_is_running bash
 
-     cd /opt/wildfly/stanalone/log
+     cd /opt/wildfly/standalone/log
      tail server.log
      ````
 
