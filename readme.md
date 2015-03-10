@@ -296,6 +296,15 @@ You can create the directory from within the boot2docker-vm with the following c
     COPY javaee6angularjs.war /opt/wildfly/standalone/deployments/
     ````
 
+    ````
+    Note: On Mac OSX, you need to add two more lines to the Dockerfile
+
+    USER root
+    
+    RUN chown -R wildfly:wildfly /opt/wildfly/standalone/deployments/javaee6angularjs.war
+
+    ````
+
     > The trailing "/" does matter
 
     > You can find `javaee6angularjs.war` at <https://github.com/burrsutter/docker_tutorial/blob/master/javaee6angularjs.war?raw=true>
