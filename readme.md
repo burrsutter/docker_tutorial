@@ -86,6 +86,12 @@ You can make this change on the Boot2Docker Start command window as well
 
     > If so, then fall back to the Boot2Docker Start menu option calling "start.sh".
 
+    There is another SSH related error that shows up, basically ssh.exe can not be found in the %PATH%.
+    Use Control Panel to add the C:\Program Files(x86)\Git\bin to your PATH
+
+    ![Alt text](/screenshots/adding_ssh_to_PATH.png?raw=true "Adding ssh to PATH")
+
+
 
 
 4. `boot2docker up`
