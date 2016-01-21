@@ -1,58 +1,60 @@
-Docker with boot2docker for Windows Tutorial
-============================================
+Docker with Docker Toolbox for Windows Tutorial
+===============================================
 
-This tutorial walks you through the basics of using a Java app server (WildFly) via a Linux container, running on Windows with boot2docker.  We have been testing this tutorial on Windows 7 and 8.1, you will notice that the screenshots come from either of those versions as this document has been tested and maintained.
+This tutorial walks you through the basics of using a Java app server (WildFly) via a Linux container, running on Windows with  Docker Toolbox.  We have been testing this tutorial on Windows 7 and 8.1, you will notice that the screenshots come from either of those versions as this document has been tested and maintained.
 
 There are notes for people running on Macs as well.
 
-First follow [installation steps](https://docs.docker.com/installation/windows/) for boot2docker:
+
+First follow [installation steps](https://docs.docker.com/windows/step_one/) for Docker Toolbox:
 
 ![Alt text](/screenshots/installer.png?raw=true "Installer")
 
-Unless you already have VirtualBox installed, install all the components.
+Install all the components.
 
-> Mac: The docker and boot2docker binaries are in `/usr/local/bin` which you can access from your terminal.
-> Windows: The boot2docker binary lands in `C:\Program Files\Boot2Docker` for Windows
+> Mac: The docker binaries are in `/usr/local/bin` which you can access from your terminal.
 
-* * *
-##### Tip 1: where does the boot2docker VM ISO land on a Windows?
-Windows: `C:\Users\Burr\.boot2docker\boot2docker.iso`
-
-Mac: `~/.boot2docker/boot2docker.iso`
-* * *
-
-##### Tip 2: where does the boot2docker instance land on Windows installation of VirtualBox
-
-C:\Users\Burr\VirtualBox VMs\boot2docker-vm
+> Windows: The docker binaries lands in `C:\Program Files\Docker Toolbox` for Windows
 
 * * *
-##### Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width
+##### Tip 1: Where does the boot2docker VM ISO land on a Windows?
+Windows: `C:\Users\<your_username>\.docker\machine\cache\boot2docker.iso`
 
-You can make this change on the Boot2Docker Start command window as well
+Mac: `~/.docker/machine/cache/boot2docker.iso`
+* * *
+
+##### Tip 2: Where does the docker-machine default instance land on Windows installation of VirtualBox?
+
+`C:\Users\<your_username>\.docker\machine\machines\default\default`
+
+* * *
+##### Tip 3: Window Size Width 160 - docker ps is best displayed with lots of width.
+
+You can make this change on the  `Docker Quickstart Terminal` command window as well
 
 ![Alt text](/screenshots/cmd_properties.png?raw=true "cmd.exe Properties")
 
 
 * * *
 
-##### Tip 4: VirtualBox before `boot2docker init`
+##### Tip 4: VirtualBox before any `docker-machyine` instance.
 ![Alt text](/screenshots/virtualbox_before_boot2docker.png?raw=true "VirtualBox Before")
-> VirtualBox installed prior to boot2docker has no mention of boot2docker until we use `boot2docker init`.
-> Also, if you have previously installed boot2docker, you can often use `boot2docker upgrade` to simply update to the latest version.
+> VirtualBox installed prior to Docker Toolbox has no mention of any docker-machine until we create any docker-machine host.
+> Also, if you have previously installed Docker Toolbox, you can often use `docker-machine upgrade <docker host name> ` to simply update to the latest version.
 * * *
 
 #### Explore Docker
 
-1. Look for and select the `Boot2Docker Start` menu option in your Start Menu
+1. Look for and select the `Docker Quickstart Terminal` menu option in your Start Menu
 
-    ![Alt text](/screenshots/boot2docker_start_menu.png?raw=true "Start Menu")
+    ![Alt text](/screenshots/docker_quickstart_terminal.png?raw=true "Start Menu")
 
     >
     > Or use start.sh to launch the command prompt (not the normal Windows command prompt)
     >
-    > You should be able to double-click on start.sh in C:\Program Files\Boot2Docker for Windows
+    > You should be able to double-click on start.sh in C:\Program Files\Docker Toolbox
 
-    ![Alt text](/screenshots/boot2docker_start_sh.png?raw=true "start.sh")
+    ![Alt text](/screenshots/docker_toolbox_start.png?raw=true "start.sh")
 
 
     > If you successfully launch start.sh, it will execute `up`, `status` and `ip`, therefore you can skip to step 8 below.
@@ -60,85 +62,35 @@ You can make this change on the Boot2Docker Start command window as well
 
     ![Alt text](/screenshots/start_sh_running.png?raw=true "start.sh running")
 
-    > If there are error messages (and there normally are for a brand new installation), read steps 2 through 7 for some alternative ways to get boot2docker up and happy
+2. You might also execute docker-machine commands from the Windows (DOS) Command Prompt aka "cmd.exe" and type
+
+    `docker-machine version`
+
+    ![Alt text](/screenshots/docker_machine_version.png?raw=true "Command Prompt boot2docker version")
+
+3. `docker-machine.exe create -d virtualbox default`
+    ![Alt text](/screenshots/docker_machine_create.png?raw=true "docker_machine_create")
+    > You should see the docker host called default listed in VirtualBox Manager
+
+    ![Alt text](/screenshots/virtualbox_after_create.png?raw=true "VirtualBox After")
+
+4. `docker-machine status default`
+    > Note: When it is time to shutdown, run `docker-machine stop default`
+
+5. `docker-machine env default`
+    ![Alt text](/screenshots/docker_machine_env.png?raw=true "docker-machine env default")
+
+    > This will show all environments variables needed to connect to the docker-machine host called default
 
 
-2. You might also execute boot2docker commands from the Windows (DOS) Command Prompt aka "cmd.exe" and type
+6. `docker-machine env --shell cmd default`
 
-    `boot2docker version`
+    ![Alt text](/screenshots/docker_machine_env_cmd.png?raw=true "docker-machine env --shell cmd default")
 
-    ![Alt text](/screenshots/boot2docker_version.png?raw=true "Command Prompt boot2docker version")
-    > Note: We have seen this fail on some systems.  There will be some workarounds listed in step 3 below.
+    > Alternatively you can specify which type of shell you are using. So the proper instructions for environments variables will be created.
 
-    > Tip: on Windows 8.1, the Command Prompt is accessible if you hit the Windows key and X then C on the keyboard
-
-3. `boot2docker init`
-    ![Alt text](/screenshots/boot2docker_init.png?raw=true "boot2docker init")
-    > You should see the boot2docker-vm listed in VirtualBox Manager
-
-    ![Alt text](/screenshots/virtualbox_after_boot2docker.png?raw=true "VirtualBox After")
-
-    > Note: This might result in
-
-    ````
-    error in run: Error generating new SSH Key into C:\Users\Burr\.ssh\id_boot2docker: exec: "ssh-keygen": executable file not found in %PATH%
-    ````
-
-    > If so, then fall back to the Boot2Docker Start menu option calling "start.sh".
-
-    There is another SSH related error that shows up, basically ssh.exe can not be found in the %PATH%.
-    Use Control Panel to add the C:\Program Files(x86)\Git\bin to your PATH
-
-    ![Alt text](/screenshots/adding_ssh_to_PATH.png?raw=true "Adding ssh to PATH")
-
-
-
-
-4. `boot2docker up`
-
-    Look for the following on _Windows_:
-
-    ![Alt text](/screenshots/after_boot2docker_up.png?raw=true "boot2docker up")
-
-    > Now, if you check the VirtualBox GUI you will see the `boot2docker-vm` running:
-
-    ![Alt text](/screenshots/after_boot2docker_up_virtual_box.png?raw=true "boot2docker up results in VirtualBox")
-
-    > Watch out for "VT-x is disabled in BIOS" errors
-    > If virtualization has not been enabled in your machines BIOS, you could see the following error:
-
-    ![Alt text](/screenshots/virtualization_error.png?raw=true "virtualization error")
-
-    > Or, if you hit the Start button inside the VirtualBox Manager directly
-
-    ![Alt text](/screenshots/VT-x_error_VirtualBox.png?raw=true "virtualization error in VirtualBox Manager")
-
-    > If you see this error, you will need to update your BIOS settings accordingly.  
-
-    > BIOS for Lenovo T440s
-
-    ![Alt text](/screenshots/bios_lenovo_t440s.jpg?raw=true "Virtualization in Lenovo T440s BIOS")
-
-
-    Watch for the following on _Mac OSX_:
-
-    ![Alt text](/screenshots/macosx_env_vars.png?raw=true "Mac OSX Env Vars")
-
-    Copy and paste the export statements you are provided with in to your terminal. If you get this step wrong, when you try further commands, you may see an error message like:
-
-    ![Alt text](/screenshots/failed_macosx_env_vars.png?raw=true "Fail Mac OSX Env Vars")
-
-
-5. `boot2docker status`
-    > Note: When it is time to shutdown, run `boot2docker down`
-
-6. `boot2docker ip`
-    ![Alt text](/screenshots/boot2docker_ip.png?raw=true "boot2docker ip")
-
-    > You will need this later!
-
-7. `boot2docker ssh`
-    ![Alt text](/screenshots/boot2docker_ssh.png?raw=true "boot2docker ssh")
+7. `docker-machine ssh default`
+    ![Alt text](/screenshots/docker_machine_ssh.png?raw=true "docker-machine ssh default")
 
     > From this point forward, you will be inside of a Linux shell, using Linux commands
 
@@ -169,16 +121,17 @@ You can make this change on the Boot2Docker Start command window as well
 
     > Note: the container stops as soon as it finishes the /bin/echo command
 
-14. On Windows, with boot2docker 1.3.x, the Users directory is shared as `/c/Users`
+14. On Windows, with docker-machine, the Users directory is shared as `/c/Users`
 
     `ls /c/Users`
+
     ![Alt text](/screenshots/ls_users.png?raw=true "ls /c/Users")
 
     This shared folder will allow you to add and edit files using your traditional Windows tools instead of having to learn vi or nano.
 
     Using your File Explorer, create a `demo` sub-directory to your home directory and then use a `ls -l` to see it via the boot2docker-vm (in this example `Burr` is the username):
 
-    `ls -l /c/Users/Burr/demo`
+    `ls -l /c/Users/<your_username>/demo`
 
     ![Alt text](/screenshots/ls_l_c_users_Burr_demo.png?raw=true "ls -l /c/Users/Burr/demo")
 
@@ -247,8 +200,8 @@ You can make this change on the Boot2Docker Start command window as well
 
     ![Alt text](/screenshots/docker_run_it_p_8080_8080.png?raw=true "docker run -it -p 8080:8080 centos/wildfly")
 
-    If you remember the IP address you can use your favorite browser to hit the server.
-    If you forgot to make note of your IP address earlier, you can open another session into boot2docker.  Just go back to the Windows Start menu and select `Boot2Docker Start` or run start.sh.  You might wish to keep both boot2docker sessions open as it allows you to docker run an app server via "-it" in one window and then "docker ps" or "docker logs" in another window.
+    Each docker container process runs inside the docker host called `default` created by docker-machine previously.
+    To get the ip of the docker host, just open another CMD.exe terminal and type `docker-machine ip default`.
 
     ![Alt text](/screenshots/browser_wildfly.png?raw=true "http://192.168.59.103:8080")
 
@@ -262,19 +215,19 @@ You can make this change on the Boot2Docker Start command window as well
 
 #### Modify the image and provide our own custom Java application
 
-1. If you remember way back to `ls /c/Users/Burr/demo`, the `Users` directory on your Windows host
-is shared with the boot2docker-vm (thanks to VirtualBox Guest Additions). In your home directory, create a directory called `docker_projects` that is a sibling of `demo`.
-You can create the directory from within the boot2docker-vm with the following command (or just use File Explorer).
+1. If you remember way back to `ls /c/Users/<your_username>/demo`, the `Users` directory on your Windows host
+is shared with the docker `default` host (thanks to VirtualBox Guest Additions). In your home directory, create a directory called `docker_projects` that is a sibling of `demo`.
+You can create the directory from within the docker-machine host `default` with the following command (or just use File Explorer).
 
     ````
-    mkdir /c/Users/Burr/docker_projects
+    mkdir /c/Users/<your_username>/docker_projects
     ````
     > Use your home directory name in place of "Burr"
 
     and then create a sub-directory called `myapp`
 
     ````
-    mkdir /c/Users/Burr/docker_projects/myapp
+    mkdir /c/Users/<your_username>/docker_projects/myapp
     ````
 
     > You can create the "myapp" directory via Windows Explorer or the boot2docker-vm shell
@@ -284,7 +237,7 @@ You can create the directory from within the boot2docker-vm with the following c
     and then change to the directory, it is important that you do this inside of the boot2docker-vm shell
 
     ````
-    cd /c/Users/Burr/docker_projects/myapp
+    cd /c/Users/<your_username>/docker_projects/myapp
     ````
 
 2. In the `myapp` directory, create a text file called `Dockerfile`, with no extension.
@@ -338,11 +291,11 @@ You can create the directory from within the boot2docker-vm with the following c
 
 
 
-6. And test the app via your browser <http://192.168.59.105:8080/javaee6angularjs>
+6. And test the app via your browser <http://192.168.99.100:8080/javaee6angularjs>
 
-    > The IP address in my screenshots change from time to time as this document has been maintained. Just make sure to remember YOUR IP address as seen via start.sh or boot2docker ip
+    > The IP address in my screenshots change from time to time as this document has been maintained. Just make sure to remember YOUR IP address as seen via `docker-machine ip default`
 
-    ![Alt text](/screenshots/browser_javaee6angularjs_myapp.png?raw=true "http://192.168.59.105:8080/javaee6angularjs")
+    ![Alt text](/screenshots/browser_javaee6angularjs_myapp.png?raw=true "http://192.168.99.100:8080/javaee6angularjs")
 
     > Now it is time for a victory dance around the room! You have your first Java EE application deployed as part of a Docker container.
     > Remember, Ctrl-C to shut down the app server.
@@ -430,26 +383,6 @@ OPTIONAL - Clean Slate: If you wish to completely clean up and run through the a
     ````
 
     > watch those back ticks again
-
-3. Exit the boot2docker-vm shell, back at the Windows Command Prompt
-
-    ````
-    boot2docker down
-    boot2docker destroy
-    ````
-
-    or if boot2docker from the command line is causing you problems, there is
-    "Delete Boot2Docker VM" Start menu option which maps to delete.sh
-
-
-    and to re-make the boot2docker-vm
-
-    ````
-    boot2docker init
-    boot2docker up
-    ````
-
-    > On Windows `C:\Users\burr\.boot2docker` contain files associated with your installation and I have seen .boot2docker not be uninstalled properly, manual deletion may be necessary
 
 Check out the follow-on tutorial for adding MySQL.
 <https://github.com/burrsutter/docker_mysql_tutorial>
