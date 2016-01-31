@@ -112,16 +112,18 @@ You can make this change on the  `Docker Quickstart Terminal` command window as 
 
     ![Alt text](/screenshots/docker_run_centos.png?raw=true "docker run centos")
 
-    This will take some time if this is the first run of the "centos" image
+    This will take some time if this is the first run of the "centos" image (size: 200 MB).
 
     If you run the same command again, you will notice that is runs immediately, no download required.
     A Docker container starts incredibly fast when compared to traditional virtual machine technology.
 
-    To prove that point, run the same command again.  
+    To prove that point, run the same command again.
 
     > Note: the container stops as soon as it finishes the /bin/echo command
 
 14. On Windows, with docker-machine, the Users directory is shared as `/c/Users`
+
+    > On Mac the Users directory is shared as `/Users`
 
     `ls /c/Users`
 
@@ -132,6 +134,8 @@ You can make this change on the  `Docker Quickstart Terminal` command window as 
     Using your File Explorer, create a `demo` sub-directory to your home directory and then use a `ls -l` to see it via the boot2docker-vm (in this example `Burr` is the username):
 
     `ls -l /c/Users/<your_username>/demo`
+
+    > Mac: `ls -l /Users/<your_username>/demo`
 
     ![Alt text](/screenshots/ls_l_c_users_Burr_demo.png?raw=true "ls -l /c/Users/Burr/demo")
 
@@ -194,9 +198,11 @@ You can make this change on the  `Docker Quickstart Terminal` command window as 
 
     Hit `Ctrl-C` and run a `docker ps` to see that the container has been stopped.
 
-    In this particular case, the WildFly instance does not expose any ports to the outside world, let's try that next.
+    In this particular case, the WildFly instance does not expose any ports to the outside world, so we don't have any access to WilFly. let's try enabling external access next.
 
 21. `docker run -it -p 8080:8080 centos/wildfly`
+
+    The `-p <host_port>:<container_port>` flag exposes the container port to the docker host machine `default`. The first port `8080`relates to the docker host machine port, and the second parameter `8080` port relates to the  container port that will be exposed.
 
     ![Alt text](/screenshots/docker_run_it_p_8080_8080.png?raw=true "docker run -it -p 8080:8080 centos/wildfly")
 
@@ -317,7 +323,7 @@ You can create the directory from within the docker-machine host `default` with 
     > If detached, you will need to use `docker ps` to see the active containers and then use `docker stop CONTAINER_ID` and `docker rm CONTAINER_ID`
     >
 
-    > Note: Docker automatically generated the name "agitated_hawking" which you can use instead of the CONTAINER_ID
+    > Note: Docker automatically generated the name "agitated_hawking" which you can use instead of the CONTAINER_ID. Each time that you execute `docker run` command, it will create a different (and funny) name for your container.
 
     ![Alt text](/screenshots/docker_rm_agitated_hawking.png?raw=true "docker rm agitated_hawking")
 
@@ -351,7 +357,7 @@ You can create the directory from within the docker-machine host `default` with 
      tail server.log
      ````
 
-     > This is a very useful technique if you find things are misbehaving and you wish poke around inside the running container.  
+     > This is a very useful technique if you find things are misbehaving and you wish poke around inside the running container.
 
      ![Alt text](/screenshots/docker_exec.png?raw=true "docker exec -it myapp_is_running bash")
 
@@ -381,8 +387,10 @@ OPTIONAL - Clean Slate: If you wish to completely clean up and run through the a
     ````
     docker rmi `docker images -a -q`
     ````
-
     > watch those back ticks again
+
+    > You will probably see some scary error messages. You can ignore it since it's caused because there's dependencies between certain docker images. This bulk command doesn't follow the dependencies order.
+
 
 Check out the follow-on tutorial for adding MySQL.
 <https://github.com/burrsutter/docker_mysql_tutorial>
